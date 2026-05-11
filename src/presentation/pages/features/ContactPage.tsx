@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Mail,
   MessageSquare,
@@ -114,6 +115,8 @@ const ContactInfoCard = ({
 );
 
 export const SurtitelaLayout: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <main className="landing-page">
       {/* ================= HERO CONTACTO ================= */}
@@ -183,12 +186,12 @@ export const SurtitelaLayout: React.FC = () => {
           </p>
 
           <div className="digital-actions">
-            <button className="btn-primary">
+            <button className="btn-primary" type="button" onClick={() => navigate('/catalogo')}>
               <span>Explorar catálogo</span>
               <ArrowRight size={18} />
             </button>
 
-            <button className="btn-secondary">
+            <button className="btn-secondary" type="button" onClick={() => navigate('/login')}>
               <LogIn size={18} />
               <span>Iniciar sesión</span>
             </button>
