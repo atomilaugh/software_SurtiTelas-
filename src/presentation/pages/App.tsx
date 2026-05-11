@@ -18,6 +18,7 @@ import AdminDashboard from "./dashboards/AdminDashboard";
 import AsesorDashboard from "./dashboards/AsesorDashboard";
 import DomiciliarioDashboard from "./dashboards/DomiciliarioDashboard";
 import { CartDrawer } from "../components/CartDrawer";
+import ScrollToTop from "../components/ScrollToTop";
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
@@ -55,6 +56,7 @@ const App: React.FC = () => {
         <CartDrawerProvider>
           <ThemeProvider>
             <BrowserRouter>
+              <ScrollToTop />
               <AppRoutes />
             </BrowserRouter>
           </ThemeProvider>
