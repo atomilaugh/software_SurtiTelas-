@@ -8,7 +8,7 @@ import "./Navbar.css";
 
 const Navbar: React.FC = () => {
   const { totalItems } = useCart();
-  const { user, role, logout } = useAuth();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   const goToCart = () => navigate("/carrito");
@@ -20,9 +20,7 @@ const Navbar: React.FC = () => {
   };
 
   const handleUserClick = () => {
-    if (role === "admin") navigate("/admin/dashboard");
-    else if (role === "asesor") navigate("/asesor/dashboard");
-    else if (role === "domiciliario") navigate("/domiciliario/dashboard");
+    if (user) navigate("/");
     else goToLogin();
   };
 
