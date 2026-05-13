@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from '@presentation/contexts/AuthContext';
 import { CartProvider } from '@presentation/contexts/CartContext';
 import { CartDrawerProvider } from '@presentation/contexts/CartDrawerContext';
@@ -13,20 +13,13 @@ import ContactPage from "./features/ContactPage";
 import AboutPage from "./public/AboutPage";
 import LoginPage from "./auth/LoginPage";
 import RegisterPage from "./auth/RegisterPage";
-import AdminLoginPage from "./auth/AdminLoginPage";
-import AdminDashboard from "./dashboards/AdminDashboard";
-import AsesorDashboard from "./dashboards/AsesorDashboard";
-import DomiciliarioDashboard from "./dashboards/DomiciliarioDashboard";
 import { CartDrawer } from "../components/CartDrawer";
 import ScrollToTop from "../components/ScrollToTop";
 
 const AppRoutes: React.FC = () => {
-  const location = useLocation();
-  const hideGlobalLayout = location.pathname.startsWith('/admin') || location.pathname.startsWith('/asesor') || location.pathname.startsWith('/domiciliario');
-
   return (
     <div className="flex flex-col min-h-screen">
-      {!hideGlobalLayout && <Navbar />}
+      <Navbar />
       <CartDrawer />
       <main className="flex-grow">
         <Routes>
@@ -37,14 +30,10 @@ const AppRoutes: React.FC = () => {
           <Route path="/nosotros" element={<AboutPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/registro" element={<RegisterPage />} />
-          <Route path="/admin/login" element={<AdminLoginPage />} />
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
-          <Route path="/asesor/dashboard" element={<AsesorDashboard />} />
-          <Route path="/domiciliario/dashboard" element={<DomiciliarioDashboard />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
-      {!hideGlobalLayout && <Footer />}
+      <Footer />
     </div>
   );
 };

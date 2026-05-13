@@ -4,7 +4,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import {
   GoogleAuthProvider,
   signInWithPopup,
-  signInWithEmailAndPassword,
 } from 'firebase/auth';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { auth } from '@config/firebase';
@@ -13,7 +12,9 @@ import toast from 'react-hot-toast';
 import logoImg from '@assets/images/logos/surtitelas-logo.jpg';
 import '../styles/AuthPages.css';
 
-type UserRole = 'admin' | 'asesor' | 'domiciliario' | 'cliente';
+const TEST_ACCOUNTS: { label: string; email: string; password: string }[] = [
+  { label: 'Usuario demo', email: 'demo@surtitelas.com', password: 'demo123' },
+];
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ const LoginPage: React.FC = () => {
       if (result.role === 'admin') navigate('/admin/dashboard', { replace: true });
       else if (result.role === 'asesor') navigate('/asesor/dashboard', { replace: true });
       else if (result.role === 'domiciliario') navigate('/domiciliario/dashboard', { replace: true });
+      else if (result.role === 'cliente') navigate('/cliente/dashboard', { replace: true });
       else navigate('/catalogo', { replace: true });
     } else {
       toast.error(result.error || 'Correo o contraseña incorrectos');
@@ -61,7 +63,12 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="auth-page">
-      <div className="auth-brand-card">
+      <div
+        className="auth-brand-card cursor-pointer"
+        onClick={() => navigate('/login', { replace: true })}
+        role="button"
+        aria-label="Ir a inicio de sesión"
+      >
         <img src={logoImg} alt="Surticamisetas" className="auth-brand-logo" />
       </div>
 
@@ -136,6 +143,25 @@ const LoginPage: React.FC = () => {
             {loading ? 'Verificando...' : 'Iniciar sesión'}
           </button>
         </form>
+
+        <div className="auth-test-accounts">
+          <p className="text-sm text-slate-500 mb-2">Credenciales de prueba:</p>
+          <div className="grid grid-cols-2 gap-2">
+            {TEST_ACCOUNTS.map((account) => (
+              <button
+                key={account.email}
+                type="button"
+                className="auth-secondary-btn"
+                onClick={() => {
+                  setEmail(account.email);
+                  setPassword(account.password);
+                }}
+              >
+                {account.label}
+              </button>
+            ))}
+          </div>
+        </div>
 
         <div className="auth-footer-text">
           ¿No tienes cuenta?{' '}
