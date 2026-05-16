@@ -1,37 +1,64 @@
-// src/presentation/contexts/ThemeContext.tsx
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 
-type Theme = 'light' | 'dark';
+type Theme = "light" | "dark";
 
-interface ThemeContextType {
+interface ThemeContextProps {
   theme: Theme;
   toggleTheme: () => void;
-  setTheme: (theme: Theme) => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext =
+  createContext<ThemeContextProps | null>(null);
 
-export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<Theme>(() => {
-    const saved = localStorage.getItem('admin-theme');
-    return (saved as Theme) || 'light';
-  });
+interface Props {
+  children: ReactNode;
+}
+
+export const ThemeProvider = ({
+  children,
+}: Props) => {
+  const [theme, setTheme] =
+    useState<Theme>("light");
 
   useEffect(() => {
-    localStorage.setItem('admin-theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
+    const storedTheme =
+      localStorage.getItem("theme") as Theme;
+
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.remove(
+      "light",
+      "dark"
+    );
+
+    document.documentElement.classList.add(theme);
+
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setThemeState(prev => prev === 'light' ? 'dark' : 'light');
-  };
-
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
+    setTheme((prev) =>
+      prev === "light" ? "dark" : "light"
+    );
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        toggleTheme,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );
@@ -39,8 +66,12 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
+
   if (!context) {
-    throw new Error('useTheme debe usarse dentro de ThemeProvider');
+    throw new Error(
+      "useTheme debe usarse dentro de ThemeProvider"
+    );
   }
+
   return context;
 };
