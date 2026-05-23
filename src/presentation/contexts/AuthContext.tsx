@@ -1,86 +1,194 @@
-﻿// src/presentation/contexts/AuthContext.tsx
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+﻿import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from 'react';
+
+import {
+  User,
+  onAuthStateChanged,
+  signOut,
+} from 'firebase/auth';
+
+import { auth } from '@config/firebase';
+
+export type UserRole =
+  | 'admin'
+  | 'asesor'
+  | 'domiciliario'
+  | 'cliente';
 
 interface AuthUser {
-  id: string;
-  name: string;
-  email: string;
+  uid: string;
+  email: string | null;
+  role: UserRole;
 }
 
-interface AuthContextType {
+interface LoginResult {
+  success: boolean;
+  role?: UserRole;
+  error?: string;
+}
+
+interface AuthContextProps {
   user: AuthUser | null;
-  isAuthenticated: boolean;
-  isLoading: boolean;
-  loginWithCredentials: (email: string, password: string) => { success: boolean; error?: string };
-  logout: () => void;
+  loading: boolean;
+
+  loginWithCredentials: (
+    email: string,
+    password: string
+  ) => LoginResult;
+
+  logout: () => Promise<void>;
 }
 
-// Credenciales de prueba
-const CREDENTIALS: Record<string, { password: string; name: string }> = {
-  'demo@surtitelas.com': { password: 'demo123', name: 'Usuario Demo' },
-};
+const AuthContext =
+  createContext<AuthContextProps | null>(
+    null
+  );
 
-const STORAGE_KEY = 'surtitelas_auth';
+interface Props {
+  children: ReactNode;
+}
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthProvider = ({
+  children,
+}: Props) => {
+  const [user, setUser] =
+    useState<AuthUser | null>(null);
 
-export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<AuthUser | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] =
+    useState(true);
+
+  // MOCK LOGIN TEMPORAL
+  const loginWithCredentials = (
+    email: string,
+    password: string
+  ): LoginResult => {
+    const accounts = [
+      {
+        email: 'admin@surtitelas.com',
+        password: 'admin123',
+        role: 'admin' as UserRole,
+      },
+
+      {
+        email: 'asesor@surtitelas.com',
+        password: 'asesor123',
+        role: 'asesor' as UserRole,
+      },
+
+      {
+        email: 'domiciliario@surtitelas.com',
+        password: 'domi123',
+        role: 'domiciliario' as UserRole,
+      },
+
+      {
+        email: 'demo@surtitelas.com',
+        password: 'demo123',
+        role: 'cliente' as UserRole,
+      },
+    ];
+
+    const account = accounts.find(
+      (acc) =>
+        acc.email === email &&
+        acc.password === password
+    );
+
+    if (!account) {
+      return {
+        success: false,
+        error: 'Credenciales inválidas',
+      };
+    }
+
+    const authUser: AuthUser = {
+      uid: crypto.randomUUID(),
+      email: account.email,
+      role: account.role,
+    };
+
+    localStorage.setItem(
+      'auth_user',
+      JSON.stringify(authUser)
+    );
+
+    setUser(authUser);
+
+    return {
+      success: true,
+      role: account.role,
+    };
+  };
 
   useEffect(() => {
-    // Restore session
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      try {
-        const data = JSON.parse(stored);
-        setUser(data.user);
-        setRole(data.role);
-      } catch (e) {
-        localStorage.removeItem(STORAGE_KEY);
-      }
+    const storedUser =
+      localStorage.getItem('auth_user');
+
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
     }
+
+    const unsubscribe =
+      onAuthStateChanged(
+        auth,
+        async (firebaseUser: User | null) => {
+          if (firebaseUser) {
+            const authUser: AuthUser = {
+              uid: firebaseUser.uid,
+              email: firebaseUser.email,
+              role: 'cliente',
+            };
+
+            setUser(authUser);
+
+            localStorage.setItem(
+              'auth_user',
+              JSON.stringify(authUser)
+            );
+          }
+        }
+      );
+
     setLoading(false);
+
+    return unsubscribe;
   }, []);
 
-  const loginWithCredentials = (email: string, password: string): { success: boolean; error?: string } => {
-    const cred = CREDENTIALS[email as keyof typeof CREDENTIALS];
-    
-    if (cred && cred.password === password) {
-      const authUser: AuthUser = {
-        id: email,
-        name: cred.name,
-        email: email,
-      };
-      
-      setUser(authUser);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ user: authUser }));
-      return { success: true };
-    }
-    
-    return { success: false, error: 'Credenciales incorrectas' };
-  };
+  const logout = async () => {
+    localStorage.removeItem('auth_user');
 
-  const logout = () => {
     setUser(null);
-    localStorage.removeItem(STORAGE_KEY);
+
+    await signOut(auth);
   };
 
-  const value: AuthContextType = {
-    user,
-    isAuthenticated: !!user,
-    isLoading: loading,
-    loginWithCredentials,
-    logout,
-  };
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        loading,
+        loginWithCredentials,
+        logout,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 export const useAuth = () => {
-  const ctx = useContext(AuthContext);
-  if (!ctx) {
-    throw new Error('useAuth debe usarse dentro de AuthProvider');
+  const context = useContext(AuthContext);
+
+  if (!context) {
+    throw new Error(
+      'useAuth debe usarse dentro de AuthProvider'
+    );
   }
-  return ctx;
+
+  return context;
 };
