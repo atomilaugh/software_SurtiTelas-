@@ -20,17 +20,17 @@
 .filter-drawer {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   bottom: 0;
   width: 100%;
   max-width: 380px;
   background: var(--color-brand-white);
   z-index: 1099;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
   flex-direction: column;
-  box-shadow: -8px 0 48px rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 0 48px rgba(0, 0, 0, 0.2);
 }
 
 .filter-drawer.open {
