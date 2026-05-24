@@ -1,6 +1,6 @@
-# Documentación Completa - Dashboards ERP SurtiTelas
+﻿# Documentación Completa - Dashboards ERP SurtiTelas
 
-## 🎯 Stack Tecnológico Base
+## ðŸŽ¯ Stack Tecnológico Base
 
 - React 18+
 - TypeScript
@@ -14,57 +14,57 @@
 
 ---
 
-## 🔐 Acceso desde Login
+## ðŸ” Acceso desde Login
 
 El acceso a todos los dashboards y módulos se realiza únicamente desde la página de login.
 El usuario debe iniciar sesión en `/login` con las credenciales correspondientes antes de poder entrar a cualquier dashboard.
 
 ---
 
-## 1️⃣ Dashboard Administrador
+## 1ï¸âƒ£ Dashboard Administrador
 
-### 🔐 Credenciales
+### ðŸ” Credenciales
 - Email: `admin@surticamisetas.com`
 - Password: `admin123`
 
-### 📁 Estructura de Archivos
+### ðŸ“ Estructura de Archivos
 
 ```
 src/
-├── app/
-│   ├── components/
-│   │   ├── AdminDashboard.tsx          # Componente principal
-│   │   ├── admin/
-│   │   │   ├── DashboardGeneral.tsx
-│   │   │   ├── ConfiguracionModule.tsx
-│   │   │   ├── UsuariosModule.tsx
-│   │   │   ├── InventarioModule.tsx
-│   │   │   ├── ProduccionModule.tsx
-│   │   │   ├── VentasModule.tsx
-│   │   │   ├── HistorialPagosModule.tsx
-│   │   │   ├── ReportesModule.tsx
-│   │   │   └── NotificationsDropdown.tsx
-│   │   └── ui/
-│   │       ├── card.tsx
-│   │       ├── button.tsx
-│   │       ├── badge.tsx
-│   │       ├── input.tsx
-│   │       ├── label.tsx
-│   │       ├── select.tsx
-│   │       ├── dialog.tsx
-│   │       ├── textarea.tsx
-│   │       ├── scroll-area.tsx
-│   │       ├── table.tsx
-│   │       └── tabs.tsx
-│   └── config/
-│       └── menuConfig.ts
-└── styles/
-    ├── index.css
-    ├── default_theme.css
-    └── globals.css
+â”œâ”€â”€ app/
+â”‚   â”œâ”€â”€ components/
+â”‚   â”‚   â”œâ”€â”€ AdminDashboard.tsx          # Componente principal
+â”‚   â”‚   â”œâ”€â”€ admin/
+â”‚   â”‚   â”‚   â”œâ”€â”€ DashboardGeneral.tsx
+â”‚   â”‚   â”‚   â”œâ”€â”€ ConfiguracionModule.tsx
+â”‚   â”‚   â”‚   â”œâ”€â”€ UsuariosModule.tsx
+â”‚   â”‚   â”‚   â”œâ”€â”€ InventarioModule.tsx
+â”‚   â”‚   â”‚   â”œâ”€â”€ ProduccionModule.tsx
+â”‚   â”‚   â”‚   â”œâ”€â”€ VentasModule.tsx
+â”‚   â”‚   â”‚   â”œâ”€â”€ HistorialPagosModule.tsx
+â”‚   â”‚   â”‚   â”œâ”€â”€ ReportesModule.tsx
+â”‚   â”‚   â”‚   â””â”€â”€ NotificationsDropdown.tsx
+â”‚   â”‚   â””â”€â”€ ui/
+â”‚   â”‚       â”œâ”€â”€ card.tsx
+â”‚   â”‚       â”œâ”€â”€ button.tsx
+â”‚   â”‚       â”œâ”€â”€ badge.tsx
+â”‚   â”‚       â”œâ”€â”€ input.tsx
+â”‚   â”‚       â”œâ”€â”€ label.tsx
+â”‚   â”‚       â”œâ”€â”€ select.tsx
+â”‚   â”‚       â”œâ”€â”€ dialog.tsx
+â”‚   â”‚       â”œâ”€â”€ textarea.tsx
+â”‚   â”‚       â”œâ”€â”€ scroll-area.tsx
+â”‚   â”‚       â”œâ”€â”€ table.tsx
+â”‚   â”‚       â””â”€â”€ tabs.tsx
+â”‚   â””â”€â”€ config/
+â”‚       â””â”€â”€ menuConfig.ts
+â””â”€â”€ styles/
+    â”œâ”€â”€ index.css
+    â”œâ”€â”€ default_theme.css
+    â””â”€â”€ globals.css
 ```
 
-### 🎨 Diseño del Layout
+### ðŸŽ¨ Diseño del Layout
 
 #### `AdminDashboard.tsx`
 
@@ -87,7 +87,7 @@ interface AdminDashboardProps {
 
 ---
 
-### 🧭 Sidebar
+### ðŸ§­ Sidebar
 
 #### Clases CSS principales
 
@@ -136,7 +136,7 @@ className={`bg-[#0D0D0D] text-white transition-all duration-300 ease-in-out flex
 </div>
 ```
 
-#### Botón “Cerrar Sesión”
+#### Botón â€œCerrar Sesiónâ€
 
 ```tsx
 <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-gray-400 hover:bg-red-500/10 hover:text-red-500">
@@ -147,7 +147,7 @@ className={`bg-[#0D0D0D] text-white transition-all duration-300 ease-in-out flex
 
 ---
 
-### 🏁 Header
+### ðŸ Header
 
 #### Estructura exacta
 
@@ -198,7 +198,7 @@ className={`bg-[#0D0D0D] text-white transition-all duration-300 ease-in-out flex
 
 ---
 
-## 📊 Dashboard General — `DashboardGeneral.tsx`
+## ðŸ“Š Dashboard General â€” `DashboardGeneral.tsx`
 
 ### KPIs superiores
 
@@ -233,7 +233,7 @@ Cada card:
 
 ---
 
-### 🚀 Accesos Rápidos a Módulos
+### ðŸš€ Accesos Rápidos a Módulos
 
 ```ts
 const modules = [
@@ -315,7 +315,7 @@ const modules = [
 
 ---
 
-### 📈 Gráficos con Recharts
+### ðŸ“ˆ Gráficos con Recharts
 
 #### Datos
 
@@ -358,7 +358,7 @@ const ventasMesData = [
 
 ---
 
-### 🚨 Alertas del Sistema
+### ðŸš¨ Alertas del Sistema
 
 ```ts
 const alertas = [
@@ -390,7 +390,7 @@ const alertas = [
 
 ---
 
-### 📋 Tabla de Últimos Pedidos
+### ðŸ“‹ Tabla de Últimos Pedidos
 
 ```ts
 const ultimosPedidos = [
@@ -421,7 +421,7 @@ const ultimosPedidos = [
 
 ---
 
-### 👥 Empleados Activos
+### ðŸ‘¥ Empleados Activos
 
 ```ts
 const empleadosActivos = [
@@ -462,7 +462,7 @@ const empleadosActivos = [
 
 ---
 
-### 📋 Menú de Configuración — `menuConfig.ts`
+### ðŸ“‹ Menú de Configuración â€” `menuConfig.ts`
 
 ```ts
 export const adminMenuItems: MenuItem[] = [
@@ -543,13 +543,13 @@ export const adminMenuItems: MenuItem[] = [
 
 ---
 
-## 2️⃣ Dashboard Asesor
+## 2ï¸âƒ£ Dashboard Asesor
 
-### 🔐 Credenciales
+### ðŸ” Credenciales
 - Email: `asesor@surticamisetas.com`
 - Password: `asesor123`
 
-### 📊 Módulo: Mis Clientes
+### ðŸ“Š Módulo: Mis Clientes
 
 ```ts
 const clientes = [
@@ -616,7 +616,7 @@ const clientes = [
 
 ---
 
-### 💰 Módulo: Mis Comisiones
+### ðŸ’° Módulo: Mis Comisiones
 
 ```ts
 const comisionesData = [
@@ -665,7 +665,7 @@ const comisionesData = [
 
 ---
 
-### 📋 Menú Asesor
+### ðŸ“‹ Menú Asesor
 
 ```ts
 export const asesorMenuItems: MenuItem[] = [
@@ -720,13 +720,13 @@ export const asesorMenuItems: MenuItem[] = [
 
 ---
 
-## 3️⃣ Dashboard Domiciliario
+## 3ï¸âƒ£ Dashboard Domiciliario
 
-### 🔐 Credenciales
+### ðŸ” Credenciales
 - Email: `domiciliario@surticamisetas.com`
 - Password: `domi123`
 
-### 📦 Módulo: Mis Entregas
+### ðŸ“¦ Módulo: Mis Entregas
 
 ```ts
 const entregas = {
@@ -810,7 +810,7 @@ const entregas = {
 
 ---
 
-### 🗺️ Módulo: Rutas Asignadas
+### ðŸ—ºï¸ Módulo: Rutas Asignadas
 
 ```ts
 const rutaHoy = {
@@ -869,7 +869,7 @@ const rutaHoy = {
 
 ---
 
-### 📋 Menú Domiciliario
+### ðŸ“‹ Menú Domiciliario
 
 ```ts
 export const domiciliarioMenuItems: MenuItem[] = [
@@ -910,9 +910,9 @@ export const domiciliarioMenuItems: MenuItem[] = [
 
 ---
 
-## 4️⃣ Componentes UI — Especificaciones Exactas
+## 4ï¸âƒ£ Componentes UI â€” Especificaciones Exactas
 
-### 🎴 Card Component
+### ðŸŽ´ Card Component
 
 ```tsx
 function Card({ className, ...props }: React.ComponentProps<"div">) {
@@ -929,7 +929,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
 }
 ```
 
-### 🔘 Button Component
+### ðŸ”˜ Button Component
 
 ```tsx
 const buttonVariants = cva(
@@ -959,7 +959,7 @@ const buttonVariants = cva(
 );
 ```
 
-### 🏷️ Badge Component
+### ðŸ·ï¸ Badge Component
 
 ```tsx
 const badgeVariants = cva(
@@ -982,7 +982,7 @@ const badgeVariants = cva(
 
 ---
 
-## ✅ Checklist de Implementación Completa
+## âœ… Checklist de Implementación Completa
 
 ### Paso 1: Configuración inicial
 
@@ -1012,24 +1012,26 @@ pnpm add sonner@2.0.3
 
 ```
 src/app/components/
-├── ui/
-├── admin/
-├── asesor/
-└── domiciliario/
+â”œâ”€â”€ ui/
+â”œâ”€â”€ admin/
+â”œâ”€â”€ asesor/
+â””â”€â”€ domiciliario/
 ```
 
 ### Paso 4: Implementar componentes en orden
 
-- ✅ Componentes UI (card, button, badge, input, etc.)
-- ✅ `menuConfig.ts`
-- ✅ `AdminDashboard.tsx`
-- ✅ `DashboardGeneral.tsx`
-- ✅ Módulos específicos de cada rol
+- âœ… Componentes UI (card, button, badge, input, etc.)
+- âœ… `menuConfig.ts`
+- âœ… `AdminDashboard.tsx`
+- âœ… `DashboardGeneral.tsx`
+- âœ… Módulos específicos de cada rol
 
 ### Paso 5: Validación
 
-- ✅ Todos los gráficos Recharts tienen keys únicas
-- ✅ `@import` de fuentes está primero en `index.css`
-- ✅ Sidebar colapsa correctamente
-- ✅ Responsive funciona en móvil/tablet/desktop
-- ✅ Los 4 roles tienen sus menús configurados
+- âœ… Todos los gráficos Recharts tienen keys únicas
+- âœ… `@import` de fuentes está primero en `index.css`
+- âœ… Sidebar colapsa correctamente
+- âœ… Responsive funciona en móvil/tablet/desktop
+- âœ… Los 4 roles tienen sus menús configurados
+
+

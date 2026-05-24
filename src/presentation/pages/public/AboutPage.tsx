@@ -92,7 +92,7 @@ const featuresData: FeatureItem[] = [
   },
   {
     icon: <Zap size={22} />,
-    title: 'Procesos Ágiles',
+    title: 'Procesos ágiles',
     description:
       'Producción y distribución optimizadas para tiempos de entrega rápidos.',
   },
@@ -115,6 +115,7 @@ const teamData: TeamMember[] = [
   {
     name: 'María González',
     role: 'Diseñadora Creativa',
+
     description:
       'Experta en identidad visual, personalización y diseño de prendas.',
     icon: <Palette size={22} />,
@@ -147,7 +148,7 @@ export const AboutSection = memo(() => {
         <div className="modules-header">
           <span className="top-badge">Identidad</span>
 
-          <h2>Conócenos</h2>
+          <h2>Conocémonos</h2>
 
           <p>
             Nuestra costura representa compromiso, elegancia y precisión
@@ -327,7 +328,7 @@ export const CTASection = memo(() => {
 
         <p>
           Creamos prendas personalizadas con acabados premium,
-          producción eficiente y acompañamiento profesional.
+          producción eficiente y acompaamiento profesional.
         </p>
 
         <button
@@ -347,7 +348,7 @@ export const CTASection = memo(() => {
 CTASection.displayName = 'CTASection';
 
 /* =========================================================
-   PAGE
+  PAGE
 ========================================================= */
 
 const AboutPage = () => {
@@ -367,3 +368,5 @@ const AboutPage = () => {
 };
 
 export default memo(AboutPage);
+
+

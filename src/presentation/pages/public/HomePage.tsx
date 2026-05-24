@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react';
+﻿import React, { useState, ReactNode } from 'react';
 import {
   Shirt,
   Scissors,
@@ -143,7 +143,7 @@ const ChallengesSection = () => (
       <h2>¿Te suena familiar?</h2>
 
       <p>
-        La mayoría de empresas de confección enfrentan estos desafíos
+        La mayor parte de empresas de confección enfrentan estos desafíos
         diariamente.
       </p>
     </div>

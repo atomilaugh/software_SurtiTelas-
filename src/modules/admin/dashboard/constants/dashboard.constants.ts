@@ -1,1 +1,0 @@
-export const DASHBOARD_TITLE = 'Admin Dashboard';

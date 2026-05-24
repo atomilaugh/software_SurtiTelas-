@@ -1,40 +1,60 @@
-import { Bell, Search, ChevronDown, Moon, Sun } from 'lucide-react';
-import { useState } from 'react';
+﻿import { Menu, Bell, Download, Moon, Sun } from 'lucide-react';
+import { Button } from '../../shared/ui/Button';
+import { Input } from '../../shared/ui/Input';
+import { useTheme } from '../../app/contexts/ThemeContext';
+import { NotificationsDropdown } from '../features/admin/NotificationsDropdown';
 
 interface HeaderProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
+  onMenuClick?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
-  const [darkMode, setDarkMode] = useState(false);
+export const Header = ({ title, subtitle, onMenuClick }: HeaderProps) => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <header className="mb-8 flex flex-col gap-4 rounded-[32px] border border-slate-200 bg-white/90 p-5 shadow-sm backdrop-blur-xl lg:flex-row lg:items-center lg:justify-between">
-      <div>
-        <p className="text-sm uppercase tracking-[0.24em] text-slate-500">{subtitle}</p>
-        <h2 className="mt-2 text-3xl font-semibold text-slate-950">{title}</h2>
+    <header className="bg-[var(--bg-elevated)] dark:bg-[var(--bg-elevated)] border-b border-[var(--border-default)] dark:border-[var(--border-default)] px-4 sm:px-6 py-4 flex items-center justify-between">
+      <div className="flex items-center gap-4">
+        {onMenuClick && (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={onMenuClick}
+            className="lg:hidden"
+          >
+            <Menu className="h-5 w-5" />
+          </Button>
+        )}
+        <div>
+          <h1 className="text-xl font-semibold text-[var(--text-primary)]">{title}</h1>
+          {subtitle && <p className="text-sm text-[var(--text-secondary)]">{subtitle}</p>}
+        </div>
       </div>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <div className="relative w-full sm:w-72">
-          <Search size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
-          <input
-            placeholder="Buscar pedidos, clientes o rutas"
-            className="w-full rounded-full border border-slate-200 bg-slate-50 py-3 pl-12 pr-4 text-sm text-slate-700 shadow-sm outline-none transition focus:border-slate-400 focus:bg-white"
+      <div className="flex items-center gap-3">
+        <div className="relative hidden sm:block">
+          <Input
+            type="search"
+            placeholder="Buscar..."
+            className="w-48 lg:w-64 pl-10"
           />
         </div>
-        <button
-          type="button"
-          onClick={() => setDarkMode((prev) => !prev)}
-          className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300"
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={toggleTheme}
+          title={theme === 'light' ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'}
         >
-          {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-          {darkMode ? 'Claro' : 'Dark'}
-        </button>
-        <button type="button" className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 text-white shadow-lg shadow-slate-950/20 transition hover:bg-slate-800">
-          <Bell size={20} />
-        </button>
+          {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+        </Button>
+        <Button variant="outline" size="sm" className="hidden sm:flex">
+          <Download className="h-4 w-4 mr-2" />
+          Exportar
+        </Button>
       </div>
     </header>
   );
 };
+
+

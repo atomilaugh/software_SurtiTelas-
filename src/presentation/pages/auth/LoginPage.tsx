@@ -13,7 +13,10 @@ import logoImg from '@assets/images/logos/surtitelas-logo.jpg';
 import '../styles/AuthPages.css';
 
 const TEST_ACCOUNTS: { label: string; email: string; password: string }[] = [
-  { label: 'Usuario demo', email: 'demo@surtitelas.com', password: 'demo123' },
+  { label: 'Administrador', email: 'admin@surticamisetas.com', password: 'admin123' },
+  { label: 'Asesor', email: 'asesor@surticamisetas.com', password: 'asesor123' },
+  { label: 'Domiciliario', email: 'domiciliario@surticamisetas.com', password: 'domi123' },
+  { label: 'Cliente', email: 'cliente@email.com', password: 'cliente123' },
 ];
 
 const LoginPage: React.FC = () => {
@@ -32,7 +35,7 @@ const LoginPage: React.FC = () => {
     const result = loginWithCredentials(email.trim(), password);
 
     if (result.success) {
-      toast.success('Sesión iniciada correctamente');
+      toast.success('Sesión iniciada');
 
       if (result.role === 'admin') navigate('/admin/dashboard', { replace: true });
       else if (result.role === 'asesor') navigate('/asesor/dashboard', { replace: true });
@@ -175,9 +178,5 @@ const LoginPage: React.FC = () => {
 };
 
 export default LoginPage;
-
-
-
-
 
 

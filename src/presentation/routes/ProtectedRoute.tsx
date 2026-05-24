@@ -1,13 +1,11 @@
-import {
-  Navigate,
-} from "react-router-dom";
-
-import { ReactNode } from "react";
+﻿import React from "react";
+import { Navigate } from "react-router-dom";
+import { ReactElement } from "react";
 
 import { useAuth } from "../contexts/AuthContext";
 
 interface Props {
-  children: ReactNode;
+  children: ReactElement;
   allowedRoles: string[];
 }
 
@@ -15,7 +13,7 @@ const ProtectedRoute = ({
   children,
   allowedRoles,
 }: Props) => {
-  const { user, loading } =
+  const { user, loading, logout } =
     useAuth();
 
   if (loading) {
@@ -43,7 +41,10 @@ const ProtectedRoute = ({
     return <Navigate to="/unauthorized" />;
   }
 
-  return children;
+  return React.cloneElement(children, { userRole: user.role, userName: user.email?.split('@')[0] || 'Usuario', onLogout: logout });
 };
 
 export default ProtectedRoute;
+
+
+

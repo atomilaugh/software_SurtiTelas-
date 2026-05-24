@@ -1,4 +1,4 @@
-import { cn } from '@/shared/utils';
+﻿import { cn } from '@/shared/utils';
 
 interface SpinnerProps { size?: 'sm' | 'md' | 'lg'; className?: string; }
 
@@ -8,3 +8,6 @@ export const Spinner = ({ size = 'md', className }: SpinnerProps) => {
     <div className={cn('animate-spin rounded-full border-2 border-slate-200 dark:border-zinc-700 border-t-slate-900 dark:border-t-white', sizeMap[size], className)} />
   );
 };
+
+
+

@@ -58,6 +58,11 @@ export default defineConfig({
   },
   // Asegura que los tipos de módulo se resuelvan correctamente
   optimizeDeps: {
-    include: ["react", "react-dom", "react-router-dom", "lucide-react"]
+    include: ["react", "react-dom", "react-router-dom", "lucide-react", "react-is", "recharts"]
+  },
+  ssr: {
+    external: ["recharts"]
   }
 })
+
+

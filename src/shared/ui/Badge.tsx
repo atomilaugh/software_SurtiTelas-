@@ -1,4 +1,4 @@
-import { cva, type VariantProps } from 'class-variance-authority';
+﻿import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/shared/utils';
 
 const badgeVariants = cva(
@@ -42,3 +42,6 @@ export const Badge = ({ variant, children, className, dot }: BadgeProps) => (
     {children}
   </span>
 );
+
+
+

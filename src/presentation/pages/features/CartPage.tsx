@@ -42,7 +42,7 @@ const CartPage: React.FC = () => {
       {items.length === 0 ? (
         <div className="cart-empty">
           <h2>Carrito vacío</h2>
-          <p>Añade tus telas premium favoritas para comenzar tu compra.</p>
+          <p>Agrega tus telas premium favoritas para comenzar tu compra.</p>
           <Link className="cart-empty-cta" to="/catalogo">
             Ver catálogo
           </Link>
@@ -129,7 +129,7 @@ const CartPage: React.FC = () => {
               <span>{formatCurrency(tax)}</span>
             </div>
             <div className="cart-summary-row">
-              <span>Envío</span>
+              <span>Envi­o</span>
               <span>{shipping === 0 ? 'Gratis' : formatCurrency(shipping)}</span>
             </div>
             <div className="cart-summary-total">
@@ -149,3 +149,5 @@ const CartPage: React.FC = () => {
 };
 
 export default CartPage;
+
+

@@ -1,4 +1,4 @@
-import { useEffect, useRef, ReactNode } from 'react';
+﻿import { useEffect, useRef, ReactNode } from 'react';
 import { X } from 'lucide-react';
 import { cn } from '@/shared/utils';
 import { Button } from './Button';
@@ -74,3 +74,6 @@ export const Modal = ({ open, onClose, title, description, children, footer, siz
     </div>
   );
 };
+
+
+

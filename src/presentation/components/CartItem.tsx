@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { Minus, Plus, Trash2 } from 'lucide-react'
 import type { CartItem as CartItemType } from '@presentation/contexts/CartContext'
 
@@ -68,3 +68,6 @@ const CartItem: React.FC<CartItemProps> = ({ item, onIncrement, onDecrement, onR
 }
 
 export default CartItem
+
+
+

@@ -1,5 +1,5 @@
 ﻿/* =================================================================
-   PRODUCT DETAIL MODAL — LUXURY NEUTRAL EDITION V2
+   PRODUCT DETAIL MODAL â€” LUXURY NEUTRAL EDITION V2
    Refinado / Más limpio / Más premium / Mejor jerarquía visual
 ================================================================= */
 
@@ -1483,7 +1483,7 @@
   animation: pdBadgeShine 4s linear infinite;
 }
 
-/* PEQUEÑO GLOW */
+/* PEQUEÃ‘O GLOW */
 
 .pd-floating-badge::after {
   content: "";
@@ -1516,3 +1516,5 @@
     transform: translateX(220%);
   }
 }
+
+

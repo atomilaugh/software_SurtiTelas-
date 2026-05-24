@@ -1,4 +1,4 @@
-.login-page {
+﻿.login-page {
   min-height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
@@ -64,3 +64,5 @@
   font-size: 0.8rem;
   color: #9ca3af;
 }
+
+

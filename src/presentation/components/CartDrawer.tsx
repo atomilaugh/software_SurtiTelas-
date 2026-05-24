@@ -1,4 +1,4 @@
-// CartDrawer.tsx - Carrito Premium con UX/UI de Clase Mundial
+﻿// CartDrawer.tsx - Carrito Premium con UX/UI de Clase Mundial
 import React from "react"
 import { X, Minus, Plus, ShoppingBag, ArrowLeft } from "lucide-react"
 import { useCart } from "@presentation/contexts/CartContext"
@@ -160,7 +160,7 @@ export const CartDrawer: React.FC = () => {
                   </div>
 
                   <div className="summary-row">
-                    <span>Envío</span>
+                    <span>Envi­o</span>
                     <span>{shipping === 0 ? 'Gratis' : `$${shipping.toLocaleString()}`}</span>
                   </div>
 
@@ -174,7 +174,7 @@ export const CartDrawer: React.FC = () => {
 
                 {subtotal < 150 && (
                   <div className="cart-free-shipping">
-                    <span>¡Agrega ${(150 - subtotal).toLocaleString()} más para envío gratis!</span>
+                    <span>Á¡Agrega ${(150 - subtotal).toLocaleString()} más para envío gratis!</span>
                     <div className="shipping-progress">
                       <div
                         className="shipping-progress-bar"
@@ -206,3 +206,5 @@ export const CartDrawer: React.FC = () => {
     </>
   )
 }
+
+

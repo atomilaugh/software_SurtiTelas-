@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+﻿import React, { useMemo, useState } from 'react'
 import {
   X,
   Minus,
@@ -519,7 +519,7 @@ export const ProductDetailModal: React.FC<Props> = ({
                 </button>
 
                 <div className="pd-bottom-meta">
-                  Envío gratis • Garantía premium
+                  Env Marketing - Envío gratis en pedidos superiores a $200.000
                 </div>
 
               </div>
@@ -532,3 +532,5 @@ export const ProductDetailModal: React.FC<Props> = ({
     </>
   )
 }
+
+

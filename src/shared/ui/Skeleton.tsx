@@ -1,4 +1,4 @@
-import { cn } from '@/shared/utils';
+﻿import { cn } from '@/shared/utils';
 
 interface SkeletonProps { className?: string; }
 
@@ -25,3 +25,6 @@ export const SkeletonCard = () => (
     <Skeleton className="h-3 w-2/3" />
   </div>
 );
+
+
+

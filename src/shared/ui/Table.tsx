@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+﻿import { ReactNode } from 'react';
 import { cn } from '@/shared/utils';
 
 interface TableProps { children: ReactNode; className?: string; }
@@ -43,3 +43,6 @@ export const TableCell = ({ children, className, colSpan }: TdProps) => (
     {children}
   </td>
 );
+
+
+

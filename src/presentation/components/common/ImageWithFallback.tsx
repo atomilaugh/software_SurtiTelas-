@@ -1,4 +1,4 @@
-// Componente de imagen con fallback robusto
+﻿// Componente de imagen con fallback robusto
 import React from "react"
 import { ImageWithFallbackProps, getImageFallbackProps } from "@shared/utils/image-utils"
 
@@ -33,3 +33,6 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
 }
 
 export default ImageWithFallback
+
+
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Utilidad centralizada para manejo de imágenes con fallback robusto.
  * Reemplaza todas las dependencias externas de imágenes (ej: via.placeholder.com)
  * por assets locales con soporte de error handling y lazy loading.
@@ -125,3 +125,6 @@ export function sanitizeImageUrl(
   if (isUnsafeExternalUrl(url)) return DEFAULT_IMAGES[type]
   return url
 }
+
+
+

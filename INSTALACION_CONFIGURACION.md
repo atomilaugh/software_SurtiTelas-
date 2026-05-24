@@ -1,13 +1,13 @@
-# 📦 Instalación y Configuración - Sistema ERP
+﻿# ðŸ“¦ Instalación y Configuración - Sistema ERP
 
 ## 1. Verificar Dependencias Instaladas
 
 El proyecto ya tiene instalados:
-- ✅ `tailwindcss`
-- ✅ `postcss`
-- ✅ `autoprefixer`
-- ✅ `class-variance-authority`
-- ✅ `clsx`
+- âœ… `tailwindcss`
+- âœ… `postcss`
+- âœ… `autoprefixer`
+- âœ… `class-variance-authority`
+- âœ… `clsx`
 
 Verifica en `package.json`:
 ```bash
@@ -84,7 +84,7 @@ body {
 ### Paso 4: Importar CSS en main.tsx
 
 ```tsx
-import './index.css'  // ← Asegurate de importar Tailwind
+import './index.css'  // â† Asegurate de importar Tailwind
 import App from './App.tsx'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -114,18 +114,18 @@ Visita `http://localhost:5173` y verifica que los estilos de Tailwind se aplican
 
 ```
 src/presentation/components/admin/
-├── ERPComponents.tsx      (Componentes reutilizables - 200+ líneas)
-├── ERPModulesNew.tsx      (Módulos ERP - 1000+ líneas)
-├── ERPModules.tsx         (Archivo antiguo - ELIMINAR)
-└── ERPViews.tsx           (Vistas para integración)
+â”œâ”€â”€ ERPComponents.tsx      (Componentes reutilizables - 200+ líneas)
+â”œâ”€â”€ ERPModulesNew.tsx      (Módulos ERP - 1000+ líneas)
+â”œâ”€â”€ ERPModules.tsx         (Archivo antiguo - ELIMINAR)
+â””â”€â”€ ERPViews.tsx           (Vistas para integración)
 ```
 
 Archivos adicionales en raíz:
 ```
-├── ERP_DOCUMENTACION.md           (Documentación completa)
-├── GUIA_RAPIDA_ERP.md             (Guía de referencia rápida)
-├── ADMIN_DASHBOARD_EJEMPLO.tsx    (Ejemplo de integración)
-└── INSTALACION_CONFIGURACION.md   (Este archivo)
+â”œâ”€â”€ ERP_DOCUMENTACION.md           (Documentación completa)
+â”œâ”€â”€ GUIA_RAPIDA_ERP.md             (Guía de referencia rápida)
+â”œâ”€â”€ ADMIN_DASHBOARD_EJEMPLO.tsx    (Ejemplo de integración)
+â””â”€â”€ INSTALACION_CONFIGURACION.md   (Este archivo)
 ```
 
 ---
@@ -453,10 +453,10 @@ import { VentasModule } from '../admin/ERPModulesNew';
 
 ## 15. Recursos Útiles
 
-- 📚 [Documentación Tailwind CSS](https://tailwindcss.com/docs)
-- 📚 [React Hot Toast](https://react-hot-toast.com/)
-- 📚 [Lucide Icons](https://lucide.dev/)
-- 📚 [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- ðŸ“š [Documentación Tailwind CSS](https://tailwindcss.com/docs)
+- ðŸ“š [React Hot Toast](https://react-hot-toast.com/)
+- ðŸ“š [Lucide Icons](https://lucide.dev/)
+- ðŸ“š [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 
 ---
 
@@ -473,4 +473,6 @@ Si encuentras problemas:
 
 **Versión:** 1.0.0
 **Última actualización:** 22 de abril de 2024
-**Estado:** ✅ Production Ready
+**Estado:** âœ… Production Ready
+
+
