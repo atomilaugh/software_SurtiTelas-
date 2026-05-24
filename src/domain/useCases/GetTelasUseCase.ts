@@ -1,4 +1,4 @@
-import { Tela } from '../entities/Tela';
+﻿import { Tela } from '../entities/Tela';
 import { ITelaRepository } from '../repositories/ITelaRepository';
 
 export class GetTelasUseCase {
@@ -8,3 +8,6 @@ export class GetTelasUseCase {
     return this.telaRepository.getAll();
   }
 }
+
+
+

@@ -1,4 +1,4 @@
-import { useEffect, ReactNode } from 'react';
+﻿import { useEffect, ReactNode } from 'react';
 import { X } from 'lucide-react';
 import { cn } from '@/shared/utils';
 import { Button } from './Button';
@@ -13,7 +13,7 @@ interface DrawerProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const sizeMap = { sm: 'w-80', md: 'w-96', lg: 'w-[480px]' };
+const sizeMap = { sm: 'w-full max-w-xs', md: 'w-full max-w-sm', lg: 'w-full max-w-md' };
 
 export const Drawer = ({ open, onClose, title, children, footer, side = 'right', size = 'md' }: DrawerProps) => {
   useEffect(() => {
@@ -49,3 +49,6 @@ export const Drawer = ({ open, onClose, title, children, footer, side = 'right',
     </>
   );
 };
+
+
+

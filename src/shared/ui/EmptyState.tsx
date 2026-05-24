@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+﻿import { ReactNode } from 'react';
 import { cn } from '@/shared/utils';
 
 interface EmptyStateProps {
@@ -21,3 +21,6 @@ export const EmptyState = ({ icon, title, description, action, className }: Empt
     {action}
   </div>
 );
+
+
+

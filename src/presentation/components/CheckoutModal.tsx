@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react'
+﻿import React, { useMemo, useRef, useState } from 'react'
 import { X, Upload, CreditCard, BadgePercent, ShieldCheck, BadgeCheck } from 'lucide-react'
 import { toast } from 'react-hot-toast'
 import { useCart } from '@presentation/contexts/CartContext'
@@ -100,7 +100,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
         className="ch-container"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* ── Close button ── */}
+        {/* â”€â”€ Close button â”€â”€ */}
         <button
           className="ch-close-btn"
           type="button"
@@ -110,13 +110,13 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
           <X size={18} />
         </button>
 
-        {/* ── Header ── */}
+        {/*Header*/}
         <div className="ch-header">
           <h2 className="ch-title">Finalizar Compra</h2>
           <p className="ch-subtitle">Completa los datos de pago para confirmar tu pedido.</p>
         </div>
 
-        {/* ── Body ── */}
+        {/* Body */}
         <div className="ch-body">
           {/* Summary */}
           <aside className="ch-summary-card">
@@ -141,7 +141,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 <strong>{tax.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}</strong>
               </li>
               <li className="ch-summary-row muted">
-                <span>Envío</span>
+                <span>Envi­o</span>
                 <strong>{shipping === 0 ? 'Gratis' : shipping.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}</strong>
               </li>
             </ul>
@@ -231,7 +231,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
               </div>
             </div>
 
-            {/* Installments block — conditional */}
+            {/* Installments block â€” conditional */}
             {paymentType === 'installments' && (
               <div className="ch-installments-block">
                 <span className="ch-install-label">Selecciona número de cuotas</span>
@@ -297,7 +297,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
             <div className="ch-notice">
               <strong>Nota:</strong>
               <span>
-                Tu pago será verificado por un asesor en las próximas horas. Recibirás una notificación cuando sea aprobado.
+                Tu pago será verificado por un asesor en las proximas 24 horas. Si tienes dudas, no dudes en ponerte en contacto con nosotros.
               </span>
             </div>
 
@@ -316,7 +316,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 onClick={handleConfirm}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Confirmando…' : 'Confirmar Pedido'}
+                {isSubmitting ? 'Confirmandoâ€¦' : 'Confirmar Pedido'}
               </button>
             </div>
           </section>
@@ -325,3 +325,5 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
     </div>
   )
 }
+
+

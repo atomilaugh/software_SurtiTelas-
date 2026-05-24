@@ -1,4 +1,4 @@
-/* Fondo general con degradado suave */
+﻿/* Fondo general con degradado suave */
 .auth-page {
   min-height: calc(100vh - 120px);
   display: flex;
@@ -839,3 +839,5 @@
   border-radius: 4px;
   margin-top: 4px;
 }
+
+

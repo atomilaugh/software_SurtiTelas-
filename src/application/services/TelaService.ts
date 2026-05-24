@@ -1,4 +1,4 @@
-import { GetTelasUseCase } from '../../domain/useCases/GetTelasUseCase';
+﻿import { GetTelasUseCase } from '../../domain/useCases/GetTelasUseCase';
 import { ITelaRepository } from '../../domain/repositories/ITelaRepository';
 
 export class TelaService {
@@ -12,3 +12,6 @@ export class TelaService {
     return this.getTelasUseCase.execute();
   }
 }
+
+
+

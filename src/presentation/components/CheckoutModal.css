@@ -1,6 +1,6 @@
-/* ============================================================
-   CHECKOUT MODAL — ENTERPRISE / PREMIUM UI
-   Responsive • Accessible • Animated • Modern Glassmorphism
+﻿/* ============================================================
+   CHECKOUT MODAL â€” ENTERPRISE / PREMIUM UI
+   Responsive â€¢ Accessible â€¢ Animated â€¢ Modern Glassmorphism
    ============================================================ */
 
 :root {
@@ -732,7 +732,7 @@
 .ch-install-dot:hover {
   transform: translateY(-2px);
 
-  border-color: rgba(37,99,235,0.3);
+  border-color: rgba(71, 98, 156, 0.3);
 
   box-shadow: var(--ch-shadow-sm);
 }
@@ -1093,3 +1093,5 @@
     scroll-behavior: auto !important;
   }
 }
+
+

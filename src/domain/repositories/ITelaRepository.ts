@@ -1,4 +1,4 @@
-import { Tela } from '../entities/Tela';
+﻿import { Tela } from '../entities/Tela';
 
 export interface ITelaRepository {
   getAll(): Promise<Tela[]>;
@@ -7,3 +7,6 @@ export interface ITelaRepository {
   update(tela: Tela): Promise<void>;
   delete(id: string): Promise<void>;
 }
+
+
+

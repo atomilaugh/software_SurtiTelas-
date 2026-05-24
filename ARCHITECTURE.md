@@ -1,4 +1,4 @@
-# Arquitectura del Proyecto SurtiCamisetas ERP
+﻿# Arquitectura del Proyecto SurtiCamisetas ERP
 
 ## Visión General
 Este proyecto sigue una arquitectura en capas inspirada en Clean Architecture y Hexagonal Architecture, con una clara separación de responsabilidades entre las diferentes capas del sistema.
@@ -108,88 +108,88 @@ graph TD
 ### Módulo de Administrador
 ```
 src/presentation/pages/admin/
-├── AdminDashboard.tsx
-├── AdminLoginPage.tsx
-├── components/
-│   ├── AlertsPanel.tsx
-│   ├── DashboardLayout.tsx
-│   ├── Header.tsx
-│   ├── KPICard.tsx
-│   ├── OrdersPieChart.tsx
-│   ├── RecentSalesTable.tsx
-│   ├── SalesChart.tsx
-│   └── Sidebar.tsx
-├── contexts/
-│   ├── AlertsPanel.tsx
-│   ├── Dashboard.tsx
-│   ├── Header.tsx
-│   ├── KPICard.tsx
-│   ├── OrdersPieChart.tsx
-│   ├── RecentSalesTable.tsx
-│   ├── SalesChart.tsx
-│   └── Sidebar.tsx
-├── dashboardTypes.ts
-└── mockData.ts
+â”œâ”€â”€ AdminDashboard.tsx
+â”œâ”€â”€ AdminLoginPage.tsx
+â”œâ”€â”€ components/
+â”‚   â”œâ”€â”€ AlertsPanel.tsx
+â”‚   â”œâ”€â”€ DashboardLayout.tsx
+â”‚   â”œâ”€â”€ Header.tsx
+â”‚   â”œâ”€â”€ KPICard.tsx
+â”‚   â”œâ”€â”€ OrdersPieChart.tsx
+â”‚   â”œâ”€â”€ RecentSalesTable.tsx
+â”‚   â”œâ”€â”€ SalesChart.tsx
+â”‚   â””â”€â”€ Sidebar.tsx
+â”œâ”€â”€ contexts/
+â”‚   â”œâ”€â”€ AlertsPanel.tsx
+â”‚   â”œâ”€â”€ Dashboard.tsx
+â”‚   â”œâ”€â”€ Header.tsx
+â”‚   â”œâ”€â”€ KPICard.tsx
+â”‚   â”œâ”€â”€ OrdersPieChart.tsx
+â”‚   â”œâ”€â”€ RecentSalesTable.tsx
+â”‚   â”œâ”€â”€ SalesChart.tsx
+â”‚   â””â”€â”€ Sidebar.tsx
+â”œâ”€â”€ dashboardTypes.ts
+â””â”€â”€ mockData.ts
 ```
 
 ### Módulo de Asesor
 ```
 src/presentation/pages/asesor/
-├── AsesorDashboard.tsx
-├── components/
-│   ├── AlertsPanel.tsx
-│   ├── Dashboard.tsx
-│   ├── Header.tsx
-│   ├── KPICard.tsx
-│   ├── OrdersPieChart.tsx
-│   ├── RecentSalesTable.tsx
-│   ├── SalesChart.tsx
-│   └── Sidebar.tsx
-└── mockData.ts
+â”œâ”€â”€ AsesorDashboard.tsx
+â”œâ”€â”€ components/
+â”‚   â”œâ”€â”€ AlertsPanel.tsx
+â”‚   â”œâ”€â”€ Dashboard.tsx
+â”‚   â”œâ”€â”€ Header.tsx
+â”‚   â”œâ”€â”€ KPICard.tsx
+â”‚   â”œâ”€â”€ OrdersPieChart.tsx
+â”‚   â”œâ”€â”€ RecentSalesTable.tsx
+â”‚   â”œâ”€â”€ SalesChart.tsx
+â”‚   â””â”€â”€ Sidebar.tsx
+â””â”€â”€ mockData.ts
 ```
 
 ### Módulo de Domiciliario
 ```
 src/presentation/pages/domiciliario/
-├── DomiciliarioDashboard.tsx
-├── components/
-│   ├── AlertsPanel.tsx
-│   ├── Dashboard.tsx
-│   ├── Header.tsx
-│   ├── KPICard.tsx
-│   ├── OrdersPieChart.tsx
-│   ├── RecentSalesTable.tsx
-│   ├── SalesChart.tsx
-│   └── Sidebar.tsx
-└── mockData.ts
+â”œâ”€â”€ DomiciliarioDashboard.tsx
+â”œâ”€â”€ components/
+â”‚   â”œâ”€â”€ AlertsPanel.tsx
+â”‚   â”œâ”€â”€ Dashboard.tsx
+â”‚   â”œâ”€â”€ Header.tsx
+â”‚   â”œâ”€â”€ KPICard.tsx
+â”‚   â”œâ”€â”€ OrdersPieChart.tsx
+â”‚   â”œâ”€â”€ RecentSalesTable.tsx
+â”‚   â”œâ”€â”€ SalesChart.tsx
+â”‚   â””â”€â”€ Sidebar.tsx
+â””â”€â”€ mockData.ts
 ```
 
 ### Módulo de Cliente (Frontend Público)
 ```
 src/presentation/pages/cliente/
-├── ClienteDashboard.tsx
-├── components/
-│   ├── Header.tsx
-│   └── Sidebar.tsx
-└── mockData.ts
+â”œâ”€â”€ ClienteDashboard.tsx
+â”œâ”€â”€ components/
+â”‚   â”œâ”€â”€ Header.tsx
+â”‚   â””â”€â”€ Sidebar.tsx
+â””â”€â”€ mockData.ts
 ```
 
 ### Módulos Comunes
 ```
 src/presentation/pages/common/
-├── CartDrawer.css
-├── CartDrawer.tsx
-├── CartItem.tsx
-├── CartSummary.tsx
-├── CheckoutModal.css
-├── CheckoutModal.tsx
-├── ProductDetailModal.css
-├── ProductDetailModal.tsx
-├── ProductModal.tsx
-├── ScrollToTop.tsx
-├── TelaList.tsx
-├── ImageWithFallback.tsx
-└── styles/
+â”œâ”€â”€ CartDrawer.css
+â”œâ”€â”€ CartDrawer.tsx
+â”œâ”€â”€ CartItem.tsx
+â”œâ”€â”€ CartSummary.tsx
+â”œâ”€â”€ CheckoutModal.css
+â”œâ”€â”€ CheckoutModal.tsx
+â”œâ”€â”€ ProductDetailModal.css
+â”œâ”€â”€ ProductDetailModal.tsx
+â”œâ”€â”€ ProductModal.tsx
+â”œâ”€â”€ ScrollToTop.tsx
+â”œâ”€â”€ TelaList.tsx
+â”œâ”€â”€ ImageWithFallback.tsx
+â””â”€â”€ styles/
 ```
 
 ## Tecnologías Utilizadas
@@ -211,10 +211,10 @@ src/presentation/pages/common/
 
 ## Flujo de Datos Típico
 
-1. **Interacción Usuario**: Componente de Presentación → Hook/Presentación
-2. **Lógica de Negocio**: Hook/Presentación → Caso de Uso (Aplicación)
-3. **Acceso a Datos**: Caso de Uso → Repositorio (Infraestructura)
-4. **Servicios Externos**: Repositorio → Firebase/API REST
+1. **Interacción Usuario**: Componente de Presentación â†’ Hook/Presentación
+2. **Lógica de Negocio**: Hook/Presentación â†’ Caso de Uso (Aplicación)
+3. **Acceso a Datos**: Caso de Uso â†’ Repositorio (Infraestructura)
+4. **Servicios Externos**: Repositorio â†’ Firebase/API REST
 5. **Respuesta**: Datos fluyen en dirección opuesta hacia la presentación
 
 ## Puntos de Extensión
@@ -232,3 +232,4 @@ src/presentation/pages/common/
 - **Separación de Presentación y Lógica**: Los componentes son "tontos" y reciben datos vía props/hooks
 - **Tipado Fuerte**: Uso extensivo de TypeScript para seguridad en tiempo de compilación
 - **Modularidad**: Cada feature está relativamente aislado para facilitar desarrollo paralelo
+

@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+﻿import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './Button';
 import { cn } from '@/shared/utils';
 
@@ -26,7 +26,7 @@ export const Pagination = ({ page, totalPages, onPageChange, totalItems, pageSiz
     <div className={cn('flex items-center justify-between gap-4 flex-wrap', className)}>
       {totalItems != null && (
         <p className="text-sm text-slate-500 dark:text-zinc-400">
-          Mostrando <span className="font-medium text-slate-900 dark:text-white">{from}–{to}</span> de{' '}
+          Mostrando <span className="font-medium text-slate-900 dark:text-white">{from}â€“{to}</span> de{' '}
           <span className="font-medium text-slate-900 dark:text-white">{totalItems}</span> resultados
         </p>
       )}
@@ -51,3 +51,6 @@ export const Pagination = ({ page, totalPages, onPageChange, totalItems, pageSiz
     </div>
   );
 };
+
+
+

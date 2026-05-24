@@ -1,17 +1,17 @@
-# 🚀 Guía Rápida - Sistema ERP
+﻿# ðŸš€ Guía Rápida - Sistema ERP
 
 ## Archivos Principales
 
 ```
 src/presentation/components/admin/
-├── ERPComponents.tsx      ← Componentes reutilizables (220+ líneas)
-├── ERPModulesNew.tsx      ← Lógica de los 10 módulos (1000+ líneas)
-└── ERPViews.tsx           ← Vistas para integración
+â”œâ”€â”€ ERPComponents.tsx      â† Componentes reutilizables (220+ líneas)
+â”œâ”€â”€ ERPModulesNew.tsx      â† Lógica de los 10 módulos (1000+ líneas)
+â””â”€â”€ ERPViews.tsx           â† Vistas para integración
 ```
 
 ---
 
-## ⚡ Inicio Rápido
+## âš¡ Inicio Rápido
 
 ### 1. Usar un Módulo Individual
 
@@ -59,23 +59,23 @@ import {
 
 ---
 
-## 📊 Los 10 Módulos
+## ðŸ“Š Los 10 Módulos
 
 | # | Módulo | Exporta | Estado |
 |---|--------|---------|--------|
-| 1 | Configuración/Roles | `ConfiguracionRolesModule` | ✅ Completo |
-| 2 | Usuarios | `UsuariosModule` | ✅ Completo |
-| 3 | Compras | `ComprasModule` | ✅ Completo |
-| 4 | Insumos | `InsumosModule` | ✅ Completo |
-| 5 | Ventas | `VentasModule` | ✅ Completo |
-| 6 | Abonos | `AbonasModule` | ✅ Completo |
-| 7 | Devoluciones | `DevolucionesModule` | ✅ Completo |
-| 8 | Producción | `ProduccionModule` | ✅ Completo |
-| 9 | Pedidos & Domicilios | `PedidosDomiciliosModule` | ✅ Completo |
+| 1 | Configuración/Roles | `ConfiguracionRolesModule` | âœ… Completo |
+| 2 | Usuarios | `UsuariosModule` | âœ… Completo |
+| 3 | Compras | `ComprasModule` | âœ… Completo |
+| 4 | Insumos | `InsumosModule` | âœ… Completo |
+| 5 | Ventas | `VentasModule` | âœ… Completo |
+| 6 | Abonos | `AbonasModule` | âœ… Completo |
+| 7 | Devoluciones | `DevolucionesModule` | âœ… Completo |
+| 8 | Producción | `ProduccionModule` | âœ… Completo |
+| 9 | Pedidos & Domicilios | `PedidosDomiciliosModule` | âœ… Completo |
 
 ---
 
-## 🎯 Características por Módulo
+## ðŸŽ¯ Características por Módulo
 
 ### Configuración - Roles
 - [x] CRUD de roles
@@ -148,7 +148,7 @@ import {
 
 ---
 
-## 🎨 Estructura de Componentes
+## ðŸŽ¨ Estructura de Componentes
 
 ### KpiCard
 ```tsx
@@ -269,7 +269,7 @@ import {
 <ConfirmationDialog
   isOpen={isOpen}
   title="Eliminar"
-  message="¿Estás seguro?"
+  message="Â¿Estás seguro?"
   confirmLabel="Eliminar"
   isDangerous
   isLoading={isDeleting}
@@ -280,29 +280,29 @@ import {
 
 ---
 
-## 🔄 Flujo de Datos Típico
+## ðŸ”„ Flujo de Datos Típico
 
 ```
 State (datos local)
-    ↓
+    â†“
 FilterBar (búsqueda/filtros)
-    ↓
+    â†“
 useMemo (filtrados)
-    ↓
+    â†“
 useMemo (paginados)
-    ↓
+    â†“
 DataTable (renderizar)
-    ↓
+    â†“
 Acciones (Ver/Editar/Eliminar)
-    ↓
+    â†“
 Modal (formulario o detalle)
-    ↓
+    â†“
 State actualizado
 ```
 
 ---
 
-## 📝 Agregar Nuevo Módulo
+## ðŸ“ Agregar Nuevo Módulo
 
 1. Crear interfaz de datos:
 ```tsx
@@ -342,7 +342,7 @@ export const MiModuloModule: React.FC = () => {
 
 ---
 
-## ✨ Colores por Módulo
+## âœ¨ Colores por Módulo
 
 | Módulo | Color |
 |--------|-------|
@@ -358,7 +358,7 @@ export const MiModuloModule: React.FC = () => {
 
 ---
 
-## 🎯 Próximas Mejoras
+## ðŸŽ¯ Próximas Mejoras
 
 - [ ] Conectar con API real
 - [ ] Agregar gráficas/charts
@@ -373,7 +373,7 @@ export const MiModuloModule: React.FC = () => {
 
 ---
 
-## 🐛 Troubleshooting
+## ðŸ› Troubleshooting
 
 ### Problema: "formatCurrency no está definido"
 **Solución:** Importar desde ERPComponents
@@ -397,7 +397,7 @@ const filteredData = useMemo(() => {
 
 ---
 
-## 📞 Soporte
+## ðŸ“ž Soporte
 
 Para reportar bugs o sugerencias:
 1. Revisar la documentación completa en `ERP_DOCUMENTACION.md`
@@ -408,3 +408,5 @@ Para reportar bugs o sugerencias:
 
 **Última actualización:** 22 de abril de 2024
 **Versión:** 1.0.0
+
+

@@ -65,7 +65,7 @@ const RegisterPage: React.FC = () => {
       <div className="auth-card">
         <div className="auth-header">
           <h1>Crea tu cuenta</h1>
-          <p>Regístrate rápido e inicia sesión con Google si prefieres.</p>
+          <p>Registra tus credenciales para continuar</p>
         </div>
 
         <button
@@ -181,8 +181,5 @@ const RegisterPage: React.FC = () => {
 };
 
 export default RegisterPage;
-
-
-
 
 

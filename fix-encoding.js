@@ -1,1 +1,0 @@
-const fs=require('fs');let c=fs.readFileSync('src/presentation/pages/public/HomePage.tsx','utf8');c=c.replace(/SECCIÓN DE DESAFÍOS/,'SECCIÓN DE DESAFÍOS');fs.writeFileSync('src/presentation/pages/public/HomePage.tsx',c,'utf8');

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { TelaService } from '../../application/services/TelaService';
 import { TelaRepository } from '../../infrastructure/repositories/TelaRepository';
 import { Tela } from '../../domain/entities/Tela';
@@ -20,3 +20,6 @@ export const useTelas = () => {
 
   return { telas, loading };
 };
+
+
+

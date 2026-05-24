@@ -178,7 +178,7 @@ const CatalogPage: React.FC = () => {
           <div className="empty-catalog">
             <div className="empty-icon"><Search size={48} /></div>
             <h3>No se encontraron productos</h3>
-            <p>Intenta ajustar tus filtros o términos de búsqueda</p>
+            <p>Intenta ajustar tus filtros o terminos de búsqueda</p>
             <button className="btn-reset-filters" onClick={handleResetFilters}>Ver todos los productos</button>
           </div>
         ) : (
@@ -263,7 +263,7 @@ const CatalogPage: React.FC = () => {
       <FilterDrawer isOpen={filtrosAbierto} onClose={() => setFiltrosAbierto(false)} onApplyFilters={handleApplyFilters} />
 
       {selectedProduct && (
-        <ProductDetailModal 
+        <ProductDetailModal
           product={selectedProduct}
           isOpen={isModalOpen}
           onClose={handleCloseModal}
@@ -274,3 +274,5 @@ const CatalogPage: React.FC = () => {
 };
 
 export default CatalogPage;
+
+

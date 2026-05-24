@@ -1,4 +1,4 @@
-import { cn } from '@/shared/utils';
+﻿import { cn } from '@/shared/utils';
 import { ReactNode } from 'react';
 
 interface AlertProps {
@@ -25,3 +25,6 @@ export const Alert = ({ variant = 'info', title, children, icon, className }: Al
     </div>
   </div>
 );
+
+
+

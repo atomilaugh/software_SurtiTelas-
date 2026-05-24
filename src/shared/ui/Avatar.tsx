@@ -1,4 +1,4 @@
-import { cn } from '@/shared/utils';
+﻿import { cn } from '@/shared/utils';
 
 interface AvatarProps {
   src?: string | null;
@@ -22,3 +22,6 @@ export const Avatar = ({ src, name, size = 'md', className }: AvatarProps) => (
     {src ? <img src={src} alt={name} className="w-full h-full object-cover" /> : getInitials(name)}
   </div>
 );
+
+
+

@@ -19,7 +19,7 @@ export interface FilterState {
 // Datos de ejemplo basados en tu imagen de referencia
 const TALLAS_OPCIONES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 const MARCAS_OPCIONES = ['Nike', 'Puma', 'Adidas', 'Reebok', 'Under Armour'];
-const CATEGORIAS_ESPECIALES_OPCIONES = ['Pantaloneta Burda Bordada', 'Oversize Alta', 'Burda Bordada', 'Telas Frías', 'Blusas Cortas'];
+const CATEGORIAS_ESPECIALES_OPCIONES = ['Pantaloneta Burda Bordada', 'Oversize Alta', 'Burda Bordada', 'Telas Frás', 'Blusas Cortas'];
 
 export const FilterDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose, onApplyFilters }) => {
   // Estado local para los filtros seleccionados
@@ -29,7 +29,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose, onA
 
   // Funciones para manejar la selección múltiple
   const toggleSelection = (option: string, state: string[], setState: React.Dispatch<React.SetStateAction<string[]>>) => {
-    setState(prev => 
+    setState(prev =>
       prev.includes(option) ? prev.filter(item => item !== option) : [...prev, option]
     );
   };
@@ -55,13 +55,13 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose, onA
     <>
       {/* Overlay de fondo con desenfoque */}
       <div className="filter-drawer-overlay" onClick={onClose}></div>
-      
+
       {/* Panel del Drawer */}
       <div className={`filter-drawer ${isOpen ? 'open' : ''}`}>
         <div className="filter-drawer-header">
           <div>
             <h3>Filtros</h3>
-            <p className="filter-drawer-subtitle">Personaliza tu búsqueda de productos</p>
+            <p className="filter-drawer-subtitle">Personaliza tu búsqueda</p>
           </div>
           <button className="close-filter-btn" onClick={onClose}>
             <IconX />
@@ -69,13 +69,13 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose, onA
         </div>
 
         <div className="filter-drawer-content">
-          {/* SECCIÃ“N DE TALLAS */}
+          {/* SECCIÓN DE TALLAS */}
           <div className="filter-section">
             <h4>Tallas</h4>
             <div className="filter-options-grid tallas-grid">
               {TALLAS_OPCIONES.map(talla => (
-                <button 
-                  key={talla} 
+                <button
+                  key={talla}
                   className={`filter-option-btn talla-pill ${selectedTallas.includes(talla) ? 'active' : ''}`}
                   onClick={() => toggleSelection(talla, selectedTallas, setSelectedTallas)}
                 >
@@ -85,13 +85,13 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose, onA
             </div>
           </div>
 
-          {/* SECCIÃ“N DE MARCAS */}
+          {/* SECCIÓN DE MARCAS */}
           <div className="filter-section">
             <h4>Marcas</h4>
             <div className="filter-options-grid marcas-grid">
               {MARCAS_OPCIONES.map(marca => (
-                <button 
-                  key={marca} 
+                <button
+                  key={marca}
                   className={`filter-option-btn marca-pill ${selectedMarcas.includes(marca) ? 'active' : ''}`}
                   onClick={() => toggleSelection(marca, selectedMarcas, setSelectedMarcas)}
                 >
@@ -101,13 +101,13 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose, onA
             </div>
           </div>
 
-          {/* SECCIÃ“N DE CATEGORÃAS ESPECIALES */}
+          {/* SECCIÓN DE CATEGORÍAS ESPECIALES */}
           <div className="filter-section">
-            <h4>Categorías Especiales</h4>
+            <h4>Categorás Especiales</h4>
             <div className="filter-options-grid categorias-especiales-grid">
               {CATEGORIAS_ESPECIALES_OPCIONES.map(cat => (
-                <button 
-                  key={cat} 
+                <button
+                  key={cat}
                   className={`filter-option-btn categoria-especial-pill ${selectedCategoriasEspeciales.includes(cat) ? 'active' : ''}`}
                   onClick={() => toggleSelection(cat, selectedCategoriasEspeciales, setSelectedCategoriasEspeciales)}
                 >
@@ -118,7 +118,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose, onA
           </div>
         </div>
 
-        {/* FOOTER CON BOTONES DE ACCIÃ“N */}
+        {/* FOOTER CON BOTONES DE ACCIÓN */}
         <div className="filter-drawer-footer">
           <button className="btn-reset-filters" onClick={handleReset}>
             Restablecer
@@ -131,4 +131,5 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose, onA
     </>
   );
 };
+
 

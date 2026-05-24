@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+﻿import { ReactNode } from 'react';
 import { cn } from '@/shared/utils';
 
 interface CardProps {
@@ -21,3 +21,6 @@ export const Card = ({ children, className, padding = 'md', hover = false }: Car
     </div>
   );
 };
+
+
+

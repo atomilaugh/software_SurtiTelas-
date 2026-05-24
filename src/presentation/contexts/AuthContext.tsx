@@ -69,26 +69,26 @@ export const AuthProvider = ({
   ): LoginResult => {
     const accounts = [
       {
-        email: 'admin@surtitelas.com',
+        email: 'admin@surticamisetas.com',
         password: 'admin123',
         role: 'admin' as UserRole,
       },
 
       {
-        email: 'asesor@surtitelas.com',
+        email: 'asesor@surticamisetas.com',
         password: 'asesor123',
         role: 'asesor' as UserRole,
       },
 
       {
-        email: 'domiciliario@surtitelas.com',
+        email: 'domiciliario@surticamisetas.com',
         password: 'domi123',
         role: 'domiciliario' as UserRole,
       },
 
       {
-        email: 'demo@surtitelas.com',
-        password: 'demo123',
+        email: 'cliente@email.com',
+        password: 'cliente123',
         role: 'cliente' as UserRole,
       },
     ];
@@ -192,3 +192,6 @@ export const useAuth = () => {
 
   return context;
 };
+
+
+

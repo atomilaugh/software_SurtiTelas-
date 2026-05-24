@@ -1,4 +1,4 @@
-export type UserRole =
+﻿export type UserRole =
   | "admin"
   | "asesor"
   | "domiciliario"
@@ -9,3 +9,6 @@ export interface AuthUser {
   email: string | null;
   role: UserRole;
 }
+
+
+

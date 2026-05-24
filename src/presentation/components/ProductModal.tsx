@@ -1,1 +1,4 @@
-export { ProductDetailModal as ProductModal } from './ProductDetailModal'
+﻿export { ProductDetailModal as ProductModal } from './ProductDetailModal'
+
+
+

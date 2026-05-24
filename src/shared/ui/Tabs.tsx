@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+﻿import { useState, ReactNode } from 'react';
 import { cn } from '@/shared/utils';
 
 interface Tab { id: string; label: string; icon?: ReactNode; badge?: number; }
@@ -46,3 +46,6 @@ export const Tabs = ({ tabs, defaultTab, onChange, children, className }: TabsPr
     </div>
   );
 };
+
+
+

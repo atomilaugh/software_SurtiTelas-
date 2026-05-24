@@ -1,4 +1,4 @@
-/**
+﻿/**
  * EJEMPLO DE INTEGRACIÓN EN AdminDashboard
  * Copia este código en tu AdminDashboard.tsx para usar los módulos ERP
  */
@@ -234,7 +234,7 @@ const ERPHeader: React.FC<HeaderProps> = ({ activeModule, onLogout }) => {
         {/* User Menu */}
         <div className="flex items-center gap-4">
           <button className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
-            🔔
+            ðŸ””
           </button>
           <button
             onClick={onLogout}
@@ -313,3 +313,5 @@ export const AdminDashboardERP: React.FC = () => {
 };
 
 export default AdminDashboardERP;
+
+

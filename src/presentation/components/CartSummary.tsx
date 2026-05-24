@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 
 interface CartSummaryProps {
   subtotal: number
@@ -31,7 +31,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ subtotal, discount, tax, ship
           <span>{formatCurrency(tax)}</span>
         </div>
         <div className="summary-row">
-          <span>Envío</span>
+          <span>Envi­o</span>
           <span>{shipping === 0 ? 'Gratis' : formatCurrency(shipping)}</span>
         </div>
         <div className="summary-divider" />
@@ -42,10 +42,13 @@ const CartSummary: React.FC<CartSummaryProps> = ({ subtotal, discount, tax, ship
       </div>
 
       <div className="cart-summary-note">
-        <span>Compra aún más para envío gratis si tu pedido es superior a $150.000</span>
+        <span>Compra anterior</span>
+        <span>No se te olviden de guardar tus datos</span>
       </div>
     </aside>
   )
 }
 
 export default CartSummary
+
+

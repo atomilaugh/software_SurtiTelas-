@@ -1,4 +1,4 @@
-export type StatusState =
+﻿export type StatusState =
   | 'Pendiente'
   | 'En producción'
   | 'En corte'
@@ -72,3 +72,6 @@ export interface QuickAction {
   color: string;
   icon: string;
 }
+
+
+

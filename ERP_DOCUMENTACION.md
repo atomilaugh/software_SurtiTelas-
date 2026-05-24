@@ -1,4 +1,4 @@
-# 📊 Sistema ERP - Documentación Completa
+﻿# ðŸ“Š Sistema ERP - Documentación Completa
 
 ## Visión General
 
@@ -6,18 +6,18 @@ Sistema ERP moderno y profesional para **SurtiCamisetas** con 10 módulos comple
 
 ---
 
-## 🏗️ Estructura del Proyecto
+## ðŸ—ï¸ Estructura del Proyecto
 
 ```
 src/presentation/components/admin/
-├── ERPComponents.tsx          # Componentes reutilizables
-├── ERPModulesNew.tsx          # Lógica de módulos ERP (10 módulos)
-└── ERPViews.tsx               # Vistas para integración en AdminDashboard
+â”œâ”€â”€ ERPComponents.tsx          # Componentes reutilizables
+â”œâ”€â”€ ERPModulesNew.tsx          # Lógica de módulos ERP (10 módulos)
+â””â”€â”€ ERPViews.tsx               # Vistas para integración en AdminDashboard
 ```
 
 ---
 
-## 📦 Componentes Reutilizables
+## ðŸ“¦ Componentes Reutilizables
 
 Todos los módulos utilizan componentes compartidos de `ERPComponents.tsx`:
 
@@ -202,7 +202,7 @@ Diálogo de confirmación para acciones peligrosas.
 <ConfirmationDialog
   isOpen={showConfirm}
   title="Eliminar Usuario"
-  message="¿Estás seguro de que deseas eliminar a este usuario?"
+  message="Â¿Estás seguro de que deseas eliminar a este usuario?"
   confirmLabel="Eliminar"
   isDangerous
   isLoading={isDeleting}
@@ -213,7 +213,7 @@ Diálogo de confirmación para acciones peligrosas.
 
 ---
 
-## 🎯 Los 10 Módulos ERP
+## ðŸŽ¯ Los 10 Módulos ERP
 
 ### 1. **Configuración - Gestión de Roles**
 **Archivo:** `ConfiguracionRolesModule`
@@ -232,10 +232,10 @@ Diálogo de confirmación para acciones peligrosas.
 - Permisos Totales
 
 **CRUD Completo:**
-- ✅ Crear rol
-- ✅ Editar rol
-- ✅ Ver detalles
-- ✅ Eliminar rol
+- âœ… Crear rol
+- âœ… Editar rol
+- âœ… Ver detalles
+- âœ… Eliminar rol
 
 ---
 
@@ -256,10 +256,10 @@ Diálogo de confirmación para acciones peligrosas.
 - Conectados Hoy
 
 **CRUD Completo:**
-- ✅ Crear usuario
-- ✅ Editar usuario
-- ✅ Ver detalles completos
-- ✅ Eliminar usuario
+- âœ… Crear usuario
+- âœ… Editar usuario
+- âœ… Ver detalles completos
+- âœ… Eliminar usuario
 
 ---
 
@@ -303,7 +303,7 @@ Diálogo de confirmación para acciones peligrosas.
 - Valor Total Stock
 
 **Features:**
-- Alerta automática cuando stock ≤ mínimo
+- Alerta automática cuando stock â‰¤ mínimo
 - Búsqueda por nombre y categoría
 
 ---
@@ -425,7 +425,7 @@ Diálogo de confirmación para acciones peligrosas.
 
 ---
 
-## 🎨 Diseño Visual
+## ðŸŽ¨ Diseño Visual
 
 ### Colores Globales
 ```
@@ -452,7 +452,7 @@ Diálogo de confirmación para acciones peligrosas.
 
 ---
 
-## 🚀 Cómo Integrar en AdminDashboard
+## ðŸš€ Cómo Integrar en AdminDashboard
 
 Actualiza `AdminDashboard.tsx` para usar las vistas:
 
@@ -497,7 +497,7 @@ const AdminDashboard = () => {
 
 ---
 
-## 📊 Estructura de Datos
+## ðŸ“Š Estructura de Datos
 
 ### Ejemplo - Usuario
 ```tsx
@@ -529,7 +529,7 @@ interface Venta {
 
 ---
 
-## 🔧 Utilities Disponibles
+## ðŸ”§ Utilities Disponibles
 
 ### `formatCurrency(value: number): string`
 Formatea número a moneda COP
@@ -550,36 +550,36 @@ Formatea fecha con hora
 
 ---
 
-## 🎯 Características Clave
+## ðŸŽ¯ Características Clave
 
-✅ **Consistencia Visual**
+âœ… **Consistencia Visual**
 - Mismo patrón en todos los módulos
 - Colores y espaciado uniforme
 - Animaciones suaves
 
-✅ **Funcionalidad Completa**
+âœ… **Funcionalidad Completa**
 - CRUD operations en todos los módulos
 - Búsqueda y filtros
 - Paginación profesional
 
-✅ **UX Moderno**
+âœ… **UX Moderno**
 - Modales centralizados
 - Confirmaciones antes de eliminar
 - Toast notifications
 - Validación de formularios
 
-✅ **Responsive Design**
+âœ… **Responsive Design**
 - Funciona en mobile/tablet/desktop
 - Tablas horizontales en mobile
 
-✅ **Performance**
+âœ… **Performance**
 - Componentes memoizados
 - Paginación eficiente
 - Lazy loading listo
 
 ---
 
-## 📝 Próximos Pasos
+## ðŸ“ Próximos Pasos
 
 1. **Conectar con Backend:**
    - Reemplazar mock data con APIs reales
@@ -599,7 +599,7 @@ Formatea fecha con hora
 
 ---
 
-## 📚 Recursos
+## ðŸ“š Recursos
 
 - **Componentes:** `ERPComponents.tsx`
 - **Módulos:** `ERPModulesNew.tsx`
@@ -610,3 +610,5 @@ Formatea fecha con hora
 
 **Última actualización:** 22 de abril de 2024
 **Versión:** 1.0.0 - Production Ready
+
+

@@ -1,4 +1,4 @@
-// CartDrawerContext.tsx - Contexto para controlar el estado del CartDrawer
+﻿// CartDrawerContext.tsx - Contexto para controlar el estado del CartDrawer
 import React, { createContext, useContext, useState, ReactNode } from 'react'
 
 interface CartDrawerContextType {
@@ -31,3 +31,6 @@ export const useCartDrawer = () => {
   }
   return context
 }
+
+
+
