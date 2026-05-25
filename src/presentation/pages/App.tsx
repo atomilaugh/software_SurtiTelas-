@@ -29,7 +29,7 @@ import AboutPage from "./public/AboutPage";
 import LoginPage from "./auth/LoginPage";
 import RegisterPage from "./auth/RegisterPage";
 
-// ADMIN â€” lazy loaded
+// ADMIN  —  lazy loaded
 const AdminDashboard = lazy(() => import("@/app/components/AdminDashboard"));
 const UsersPage = lazy(() => import("@/app/features/admin/UsuariosModule"));
 const InventoryPage = lazy(() => import("@/app/features/admin/InventarioModule"));

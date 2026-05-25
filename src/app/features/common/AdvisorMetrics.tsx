@@ -253,19 +253,19 @@ export function AdvisorMetrics({ employee, activeClients, assistedSalesToday, in
             <h4 className="text-sm mb-2">ðŸ’¡ Consejos para Mejorar tu Rendimiento</h4>
             <ul className="space-y-1.5 text-xs text-gray-700">
               <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-0.5">â€¢</span>
+                <span className="text-purple-600 mt-0.5">•</span>
                 <span>Contacta clientes con carritos abandonados en las primeras 2 horas</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-0.5">â€¢</span>
+                <span className="text-purple-600 mt-0.5">•</span>
                 <span>Usa recomendaciones inteligentes para aumentar el ticket promedio</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-0.5">â€¢</span>
+                <span className="text-purple-600 mt-0.5">•</span>
                 <span>Registra notas detalladas para dar seguimiento efectivo</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-0.5">â€¢</span>
+                <span className="text-purple-600 mt-0.5">•</span>
                 <span>Mantén al menos 10 interacciones diarias con clientes</span>
               </li>
             </ul>

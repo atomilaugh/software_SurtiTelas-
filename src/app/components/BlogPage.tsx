@@ -172,7 +172,7 @@ export function BlogPage({ onNavigate, currentUser, onCartClick, cartItemCount }
                           day: 'numeric' 
                         })}</span>
                       </div>
-                      <span>â€¢</span>
+                      <span>•</span>
                       <span>{post.readTime} lectura</span>
                     </div>
 

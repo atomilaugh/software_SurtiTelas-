@@ -268,7 +268,7 @@ export function LoginPage({ onLogin, currentUser, onNavigate, onCartClick, cartI
                         type="password"
                         value={loginData.password}
                         onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                        placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                        placeholder="••••••••"
                         className="pl-10"
                         required
                       />
@@ -354,7 +354,7 @@ export function LoginPage({ onLogin, currentUser, onNavigate, onCartClick, cartI
                         onChange={(e) =>
                           setRegisterData({ ...registerData, password: e.target.value })
                         }
-                        placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                        placeholder="••••••••"
                         className="pl-10"
                         required
                       />
@@ -372,7 +372,7 @@ export function LoginPage({ onLogin, currentUser, onNavigate, onCartClick, cartI
                         onChange={(e) =>
                           setRegisterData({ ...registerData, confirmPassword: e.target.value })
                         }
-                        placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                        placeholder="•••••••"
                         className="pl-10"
                         required
                       />

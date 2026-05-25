@@ -620,7 +620,7 @@ export function ProfilePage({ onNavigate, currentUser, onCartClick, cartItemCoun
                         <div className="mb-6">
                           <CreditCard className="w-8 h-8 mb-4" />
                           <p className="text-2xl tracking-wider mb-1">
-                            â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ {method.last4}
+                            •••• •••• •••• {method.last4}
                           </p>
                           <p className="text-sm text-gray-300">{method.brand}</p>
                         </div>
@@ -706,7 +706,7 @@ export function ProfilePage({ onNavigate, currentUser, onCartClick, cartItemCoun
                                 {coupon.code}
                               </p>
                               <p className={`text-sm ${coupon.isActive ? 'text-gray-600' : 'text-gray-400'}`}>
-                                {coupon.discount} de descuento â€¢ Válido hasta {coupon.validUntil}
+                                {coupon.discount} de descuento • Válido hasta {coupon.validUntil}
                               </p>
                             </div>
                           </div>

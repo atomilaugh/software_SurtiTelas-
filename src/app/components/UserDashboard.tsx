@@ -632,7 +632,7 @@ export function UserDashboard({ user, orders, onLogout, onUpdateProfile, onNavig
                                   <DialogHeader>
                                     <DialogTitle>Pedido #{order.id}</DialogTitle>
                                     <DialogDescription>
-                                      {order.date} â€¢ ${order.total.toLocaleString()}
+                                      {order.date} • ${order.total.toLocaleString()}
                                     </DialogDescription>
                                   </DialogHeader>
                                   <div className="space-y-4">
@@ -661,7 +661,7 @@ export function UserDashboard({ user, orders, onLogout, onUpdateProfile, onNavig
                                               <div className="flex-1">
                                                 <p className="mb-1">{item.product.name}</p>
                                                 <p className="text-sm text-slate-600">
-                                                  Talla: {item.size} â€¢ Color: {item.color}
+                                                  Talla: {item.size} • Color: {item.color}
                                                 </p>
                                               </div>
                                               <div className="text-right">

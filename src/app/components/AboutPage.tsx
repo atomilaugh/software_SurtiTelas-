@@ -157,7 +157,7 @@ export function AboutPage({ onNavigate, currentUser, onCartClick, cartItemCount 
                 </motion.div>
                 <h3 className="text-gray-900 text-2xl mb-4">Valores</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  <strong>Calidad</strong> en nuestros proyectos â€¢ <strong>Innovación</strong> continua â€¢ <strong>Coherencia</strong> entre compromiso y ejecución â€¢ <strong>Confianza</strong> y <strong>compromiso</strong> con nuestros clientes.
+                  <strong>Calidad</strong> en nuestros proyectos • <strong>Innovación</strong> continua • <strong>Coherencia</strong> entre compromiso y ejecución • <strong>Confianza</strong> y <strong>compromiso</strong> con nuestros clientes.
                 </p>
               </div>
             </motion.div>

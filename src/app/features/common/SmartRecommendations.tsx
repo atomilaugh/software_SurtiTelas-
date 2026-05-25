@@ -234,7 +234,7 @@ export function SmartRecommendations({ clientName, clientPhone, cartItems, onSen
                   <div className="flex items-center gap-2 text-xs text-gray-600">
                     <Target className="h-3.5 w-3.5" />
                     <span>{rule.reason}</span>
-                    <span>â€¢</span>
+                    <span>•</span>
                     <span>{rule.products.length} productos</span>
                   </div>
                   <Button

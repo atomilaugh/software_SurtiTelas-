@@ -278,7 +278,7 @@ export function ShoppingCart({
                                   </h3>
                                   <div className="flex items-center gap-3 text-sm text-gray-600">
                                     <span>Talla: <span className="text-black">{item.size}</span></span>
-                                    <span>â€¢</span>
+                                    <span>•</span>
                                     <span>Color: <span className="text-black">{item.color}</span></span>
                                   </div>
                                 </div>

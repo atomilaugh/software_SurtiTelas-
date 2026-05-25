@@ -1077,7 +1077,7 @@ export function SurtitelasLanding({ onLoginRequest, user, onLogout }: Surtitelas
                     <div className="flex-1">
                       <h3 className="font-semibold">{item.nombre}</h3>
                       <p className="text-sm text-gray-600">
-                        Talla: {item.talla} â€¢ Color: {item.color}
+                        Talla: {item.talla} • Color: {item.color}
                       </p>
                       <p className="font-bold mt-1">${item.precio.toLocaleString()}</p>
                     </div>
@@ -1153,7 +1153,7 @@ export function SurtitelasLanding({ onLoginRequest, user, onLogout }: Surtitelas
                 <label className="block text-sm font-medium mb-2">Contraseña</label>
                 <Input
                   type="password"
-                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                  placeholder="••••••••"
                   className="w-full"
                   value={loginPassword}
                   onChange={(e) => setLoginPassword(e.target.value)}

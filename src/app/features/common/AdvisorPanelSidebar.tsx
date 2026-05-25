@@ -563,10 +563,10 @@ export function AdvisorPanel({
                         <h3 className="text-gray-900 mb-2">Atención Requerida</h3>
                         <ul className="space-y-1 text-sm text-gray-700">
                           {pendingRatings.length > 0 && (
-                            <li>â€¢ Tienes {pendingRatings.length} calificación(es) pendiente(s) de responder</li>
+                            <li>• Tienes {pendingRatings.length} calificación(es) pendiente(s) de responder</li>
                           )}
                           {pendingMessages.length > 0 && (
-                            <li>â€¢ Tienes {pendingMessages.length} mensaje(s) rápido(s) sin responder</li>
+                            <li>• Tienes {pendingMessages.length} mensaje(s) rápido(s) sin responder</li>
                           )}
                         </ul>
                       </div>
