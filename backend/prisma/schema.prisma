@@ -1,0 +1,424 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model DocumentsType {
+  id_document_type Int      @id @default(autoincrement()) @map("idDocument_Type")
+  documentType     String   @map("documentType")
+
+  users     Users[]
+  employees Employees[]
+  customers Customers[]
+
+  @@map("Documents_Type")
+}
+
+model Permissions {
+  id_permission Int      @id @default(autoincrement()) @map("idPermission")
+  name          String
+  description   String?
+  status        Int      @default(1)
+
+  roles Roles[]
+
+  @@map("Permissions")
+}
+
+model Roles {
+  id_role      Int          @id @default(autoincrement()) @map("idRole")
+  name         String
+  description  String?
+  status       Int          @default(1)
+  idPermission Int?         @map("idPermission")
+
+  permission Permissions? @relation(fields: [idPermission], references: [id_permission])
+  users       Users[]
+  employees   Employees[]
+
+  @@map("Roles")
+}
+
+model Suppliers {
+  id_supplier Int      @id @default(autoincrement()) @map("idSupplier")
+  name        String
+  phone       String?
+  email       String?
+  address     String?
+  status      Int      @default(1)
+
+  purchases Purchases[]
+
+  @@map("Suppliers")
+}
+
+model Workshops {
+  id_workshop Int      @id @default(autoincrement()) @map("idWorkshop")
+  name        String
+  phone       String?
+  address     String?
+  status      Int      @default(1)
+
+  productions Productions[]
+
+  @@map("Workshops")
+}
+
+model Users {
+  id_user     Int      @id @default(autoincrement())
+  name        String?
+  lastName    String?
+  phone       String?
+  email       String   @unique
+  password    String?
+  address     String?
+  status      String   @default("activo")
+  role        String   @default("admin")
+  lastLoginAt DateTime?
+  createdAt   DateTime @default(now())
+
+  idDocument_Type Int?         @map("idDocument_Type")
+  idRole          Int?         @map("idRole")
+  idEmployee      Int?         @map("idEmployee") @unique
+  idCustomer      Int?         @map("idCustomer") @unique
+
+  documentType DocumentsType? @relation(fields: [idDocument_Type], references: [id_document_type])
+  roleRef      Roles?         @relation(fields: [idRole], references: [id_role])
+  employee     Employees?     @relation("UserEmployee", fields: [idEmployee], references: [id_employee])
+  customer     Customers?     @relation("UserCustomer", fields: [idCustomer], references: [id_customer])
+
+  addresses        Address[]
+  clientOrders     Orders[]   @relation("ClientOrders")
+  advisorOrders    Orders[]   @relation("AdvisorOrders")
+  deliveryOrders   Orders[]   @relation("DeliveryOrders")
+  deliveries       Deliveries[]
+  ratingsGiven     Rating[]   @relation("ReviewerRatings")
+  targetRatings    Rating[]   @relation("TargetRatings")
+
+  @@map("Users")
+}
+
+model Address {
+  id_address Int      @id @default(autoincrement())
+  label      String
+  street     String
+  city       String
+  state      String
+  zipCode    String
+  country    String
+  phone      String?
+  createdAt  DateTime @default(now())
+
+  userId Int
+  user   Users   @relation(fields: [userId], references: [id_user])
+  orders Orders[]
+
+  @@map("Address")
+}
+
+model Rating {
+  id_rating  Int      @id @default(autoincrement()) @map("idRating")
+  orderId    Int?
+  reviewerId Int?
+  targetId   Int?
+  role       String?
+  rating     Int      @default(5)
+  comment    String?
+  createdAt  DateTime @default(now())
+
+  order    Orders? @relation(fields: [orderId], references: [id_order])
+  reviewer Users?  @relation("ReviewerRatings", fields: [reviewerId], references: [id_user])
+  target   Users?  @relation("TargetRatings", fields: [targetId], references: [id_user])
+
+  @@map("Rating")
+}
+
+model Employees {
+  id_employee Int      @id @default(autoincrement()) @map("idEmployee")
+  name        String
+  lastName    String
+  phone       String?
+  hireDate    DateTime?
+  salary      Float
+  status      Int      @default(1)
+
+  idDocument_Type Int?    @map("idDocument_Type")
+  idRole          Int?    @map("idRole")
+  idUser          Int?    @map("idUser")
+
+  documentType DocumentsType? @relation(fields: [idDocument_Type], references: [id_document_type])
+  role         Roles?         @relation(fields: [idRole], references: [id_role])
+  user         Users?         @relation("UserEmployee")
+
+  deliveries   Deliveries[]  @relation("DeliveryEmployee")
+
+  @@map("Employees")
+}
+
+model Customers {
+  id_customer Int      @id @default(autoincrement()) @map("idCustomer")
+  name        String
+  lastName    String
+  phone       String?
+  email       String?
+  address     String?
+  status      Int      @default(1)
+
+  idDocument_Type Int?    @map("idDocument_Type")
+  idUser          Int?    @map("idUser")
+
+  documentType DocumentsType? @relation(fields: [idDocument_Type], references: [id_document_type])
+  user         Users?         @relation("UserCustomer")
+
+  sales      Sales[]
+  deliveries Deliveries[] @relation("DeliveryCustomer")
+
+  @@map("Customers")
+}
+
+model Supplies {
+  id_supply Int      @id @default(autoincrement()) @map("idSupply")
+  name       String
+  stock      Int      @default(0)
+  status     Int      @default(1)
+  idProductCategory Int? @map("idProductCategory")
+
+  productCategory ProductsCategory? @relation(fields: [idProductCategory], references: [id_product_category])
+
+  @@map("Supplies")
+}
+
+model ProductsCategory {
+  id_product_category Int      @id @default(autoincrement()) @map("idProductCategory")
+  name                String
+  description         String?
+  status              Int      @default(1)
+
+  products Products[]
+  supplies Supplies[]
+
+  @@map("Products_Category")
+}
+
+model Products {
+  id_product Int      @id @default(autoincrement()) @map("idProduct")
+  name       String
+  price      Float
+  description String?
+  tipo       String?
+  color      String?
+  stock      Int      @default(0)
+  status     Int      @default(1)
+
+  idProductCategory Int?               @map("idProductCategory")
+  category          ProductsCategory? @relation(fields: [idProductCategory], references: [id_product_category])
+  orderItems        OrderItems[]
+  salesDetails      SalesDetails[]
+  purchasingDetails PurchasingDetails[]
+  returnDetails     ReturnsDetails[]
+  productions       Productions[]
+
+  @@map("Products")
+}
+
+model Orders {
+  id_order          Int      @id @default(autoincrement()) @map("idOrder")
+  orderNumber       String   @unique
+  orderDate         DateTime?
+  quantity          Int?
+  total             Float    @default(0)
+  subTotal          Float?
+  status            String   @default("pendiente")
+  clientId          Int
+  advisorId         Int?
+  deliveryPersonId  Int?
+  deliveryAddressId Int?
+  paymentMethod     String?
+  note              String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  saleId            Int?     @map("idSale")
+
+  client            Users    @relation("ClientOrders", fields: [clientId], references: [id_user])
+  advisor           Users?   @relation("AdvisorOrders", fields: [advisorId], references: [id_user])
+  deliveryPerson    Users?   @relation("DeliveryOrders", fields: [deliveryPersonId], references: [id_user])
+  deliveryAddress   Address? @relation(fields: [deliveryAddressId], references: [id_address])
+  items             OrderItems[]
+  payment           Payment?
+  delivery          Deliveries?
+  ratings           Rating[]
+  returns           Returns[]
+  sale              Sales?   @relation("OrderSale")
+
+  @@map("Orders")
+}
+
+model OrderItems {
+  id_order_item Int   @id @default(autoincrement()) @map("idOrderDetail")
+  orderId       Int    @map("idOrder")
+  productId     Int    @map("idProduct")
+  quantity      Int    @default(1)
+  unitPrice     Float
+  total         Float  @default(0)
+
+  order   Orders   @relation(fields: [orderId], references: [id_order])
+  product Products @relation(fields: [productId], references: [id_product])
+
+  @@map("Orders_Details")
+}
+
+model Payment {
+  id_payment    Int      @id @default(autoincrement()) @map("idPayment")
+  paymentDate   DateTime
+  amount        Float
+  status        Int      @default(1)
+  orderId       Int?     @map("idOrder") @unique
+
+  order         Orders?  @relation(fields: [orderId], references: [id_order])
+
+  @@map("Payments")
+}
+
+model Purchases {
+  id_purchase Int      @id @default(autoincrement()) @map("idPurchase")
+  purchaseDate DateTime
+  total       Float?
+  status      Int      @default(1)
+  idSupplier  Int?     @map("idSupplier")
+
+  supplier    Suppliers? @relation(fields: [idSupplier], references: [id_supplier])
+  details     PurchasingDetails[]
+
+  @@map("Purchases")
+}
+
+model PurchasingDetails {
+  id_purchase_detail Int     @id @default(autoincrement()) @map("idPurchaseDetail")
+  quantity           Int
+  unitValue          Float
+  subTotal           Float?
+  idPurchase         Int     @map("idPurchase")
+  idProduct          Int     @map("idProduct")
+
+  purchase Purchases @relation(fields: [idPurchase], references: [id_purchase])
+  product  Products  @relation(fields: [idProduct], references: [id_product])
+
+  @@map("Purchasing_Details")
+}
+
+model Deliveries {
+  id_delivery      Int      @id @default(autoincrement()) @map("idDelivery")
+  total            String?
+  address          String?
+  city             String?
+  phone            String?
+  idCustomer       Int?     @map("idCustomer")
+  idEmployee       Int?     @map("idEmployee")
+  idOrder          Int?     @map("idOrder") @unique
+  status           String   @default("pendiente")
+  pickupAt         DateTime?
+  deliveredAt      DateTime?
+  routeInfo        String?
+  note             String?
+  createdAt        DateTime @default(now())
+
+  customer        Customers? @relation("DeliveryCustomer", fields: [idCustomer], references: [id_customer])
+  employee        Employees? @relation("DeliveryEmployee", fields: [idEmployee], references: [id_employee])
+  order           Orders?    @relation(fields: [idOrder], references: [id_order])
+  deliveryPerson  Users?     @relation(fields: [deliveryPersonId], references: [id_user])
+
+  deliveryPersonId Int? @map("deliveryPersonId")
+
+  @@map("Deliveries")
+}
+
+model Returns {
+  id_return    Int      @id @default(autoincrement()) @map("idReturn")
+  returnDate   DateTime
+  reason       String?
+  status       Int      @default(1)
+  idOrder      Int?     @map("idOrder")
+  idProduction Int?     @map("idProduction")
+
+  order      Orders?     @relation(fields: [idOrder], references: [id_order])
+  production Productions? @relation(fields: [idProduction], references: [id_production])
+  details    ReturnsDetails[]
+
+  @@map("Returns")
+}
+
+model ReturnsDetails {
+  id_return_detail Int     @id @default(autoincrement()) @map("idReturnDetail")
+  quantity         Int
+  subtotal         Float?
+  idReturn         Int     @map("idReturn")
+  idProduct        Int     @map("idProduct")
+
+  returnRecord Returns  @relation(fields: [idReturn], references: [id_return])
+  product      Products @relation(fields: [idProduct], references: [id_product])
+
+  @@map("Returns_Details")
+}
+
+model Productions {
+  id_production Int      @id @default(autoincrement()) @map("idProduction")
+  status        Int      @default(1)
+  idWorkshop    Int?     @map("idWorkshop")
+  idProduct     Int?     @map("idProduct")
+
+  workshop Workshops? @relation(fields: [idWorkshop], references: [id_workshop])
+  product  Products?  @relation(fields: [idProduct], references: [id_product])
+  details  ProductionDetails[]
+  returns  Returns[]
+
+  @@map("Productions")
+}
+
+model ProductionDetails {
+  id_production_detail Int      @id @default(autoincrement()) @map("idProductionDetail")
+  quantityDelivered    Int?
+  amountReceived       Int?
+  dateReceived         DateTime?
+  deliveryDate         DateTime?
+  status               Int?
+  idProduction         Int      @map("idProduction")
+
+  production Productions @relation(fields: [idProduction], references: [id_production])
+
+  @@map("Production_Details")
+}
+
+model Sales {
+  id_sale     Int      @id @default(autoincrement()) @map("idSale")
+  saleDate    DateTime
+  total       Float?
+  quantity    Int?
+  unitValue   Float?
+  vatValue    Float?
+  discountValue Float?
+  totalValue  Float?
+  status      Int?
+  idCustomer  Int?     @map("idCustomer")
+  idOrder     Int?     @map("idOrder") @unique
+
+  customer Customers? @relation(fields: [idCustomer], references: [id_customer])
+  order    Orders?    @relation("OrderSale", fields: [idOrder], references: [id_order])
+  details  SalesDetails[]
+
+  @@map("Sales")
+}
+
+model SalesDetails {
+  id_sale_detail Int      @id @default(autoincrement()) @map("idSaleDetail")
+  idSale         Int      @map("idSale")
+  idProduct      Int      @map("idProduct")
+
+  sale    Sales    @relation(fields: [idSale], references: [id_sale])
+  product Products @relation(fields: [idProduct], references: [id_product])
+
+  @@map("Sales_Details")
+}

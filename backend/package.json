@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "build": "cd ../frontend && npm run build",
+    "start": "npm run build && node server.js",
+    "dev:full": "npm run build && npm run dev",
+    "install:all": "npm install && cd ../frontend && npm install && cd ../backend && npx prisma generate",
+    "postinstall": "npx prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "4.16.2",
+    "cors": "^2.8.6",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prisma": "4.16.2"
+  }
+}
