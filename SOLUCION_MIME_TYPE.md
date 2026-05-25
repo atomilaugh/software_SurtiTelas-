@@ -1,6 +1,6 @@
 ﻿# Solución al Error de MIME Type en Vite + React + TypeScript
 
-## 📋 Diagnóstico del Problema
+## ðŸ“‹ Diagnóstico del Problema
 
 **Error detectado:**
 ```
@@ -23,7 +23,7 @@ but the server responded with a MIME type of application/octet-stream
    - Servidor sin soporte para ESM (ECMAScript Modules)
    - Headers HTTP incorrectos
 
-## ✅ Solución Definitiva
+## âœ… Solución Definitiva
 
 ### 1. USAR EXCLUSIVAMENTE Vite Dev Server
 
@@ -43,29 +43,29 @@ npm run dev
 
 ```
 surti-telas/
-├── index.html              # Punto de entrada (raíz)
-├── package.json            # Dependencias y scripts
-├── vite.config.ts          # Configuración Vite
-├── tsconfig.json           # Configuración TypeScript
-├── tsconfig.node.json      # Config TS para vite.config.ts
-├── src/
-│   ├── main.tsx           # Punto de entrada React
-│   ├── index.css          # Estilos globales
-│   └── presentation/
-│       ├── pages/
-│       │   ├── App.tsx
-│       │   ├── features/
-│       │   │   └── CatalogPage.tsx   # Catálogo premium
-│       │   ├── public/
-│       │   │   └── HomePage.tsx
-│       │   └── styles/
-│       │       ├── CatalogPage.css   # Estilos del catálogo
-│       │       └── App.css
-│       └── components/
-│           ├── Navbar.tsx
-│           ├── FilterDrawer.tsx
-│           └── FilterDrawer.css
-└── node_modules/
+â”œâ”€â”€ index.html              # Punto de entrada (raíz)
+â”œâ”€â”€ package.json            # Dependencias y scripts
+â”œâ”€â”€ vite.config.ts          # Configuración Vite
+â”œâ”€â”€ tsconfig.json           # Configuración TypeScript
+â”œâ”€â”€ tsconfig.node.json      # Config TS para vite.config.ts
+â”œâ”€â”€ src/
+â”‚   â”œâ”€â”€ main.tsx           # Punto de entrada React
+â”‚   â”œâ”€â”€ index.css          # Estilos globales
+â”‚   â””â”€â”€ presentation/
+â”‚       â”œâ”€â”€ pages/
+â”‚       â”‚   â”œâ”€â”€ App.tsx
+â”‚       â”‚   â”œâ”€â”€ features/
+â”‚       â”‚   â”‚   â””â”€â”€ CatalogPage.tsx   # Catálogo premium
+â”‚       â”‚   â”œâ”€â”€ public/
+â”‚       â”‚   â”‚   â””â”€â”€ HomePage.tsx
+â”‚       â”‚   â””â”€â”€ styles/
+â”‚       â”‚       â”œâ”€â”€ CatalogPage.css   # Estilos del catálogo
+â”‚       â”‚       â””â”€â”€ App.css
+â”‚       â””â”€â”€ components/
+â”‚           â”œâ”€â”€ Navbar.tsx
+â”‚           â”œâ”€â”€ FilterDrawer.tsx
+â”‚           â””â”€â”€ FilterDrawer.css
+â””â”€â”€ node_modules/
 ```
 
 ### 3. Configuración Vite Correcta
@@ -165,7 +165,7 @@ export default defineConfig({
 }
 ```
 
-## 🚀 Instrucciones de Ejecución
+## ðŸš€ Instrucciones de Ejecución
 
 ### PASO 1: Instalar dependencias (solo primera vez)
 ```bash
@@ -190,25 +190,25 @@ npm run build    # Genera carpeta dist/
 npm run preview  # Preview del build
 ```
 
-## ⚠️ ¿POR QUÉ NO USAR LIVE SERVER?
+## âš ï¸ Â¿POR QUÉ NO USAR LIVE SERVER?
 
 | Característica | Vite Dev Server | Live Server |
 |----------------|----------------|-------------|
-| Transpilación TS/JSX | ✅ Sí (eswick + esbuild) | ❌ No |
-| MIME type correcto | ✅ application/javascript | ❌ application/octet-stream |
-| Hot Module Replacement | ✅ Sí (instantáneo) | ❌ No |
-| Alias de rutas (@) | ✅ Sí | ❌ No |
-| Optimizaciones | ✅ Tree-shaking, code-splitting | ❌ No |
-| Sourcemaps | ✅ Sí | ❌ No |
-| Soporte ESM | ✅ Nativo | ❌ Limitado |
+| Transpilación TS/JSX | âœ… Sí (eswick + esbuild) | âŒ No |
+| MIME type correcto | âœ… application/javascript | âŒ application/octet-stream |
+| Hot Module Replacement | âœ… Sí (instantáneo) | âŒ No |
+| Alias de rutas (@) | âœ… Sí | âŒ No |
+| Optimizaciones | âœ… Tree-shaking, code-splitting | âŒ No |
+| Sourcemaps | âœ… Sí | âŒ No |
+| Soporte ESM | âœ… Nativo | âŒ Limitado |
 
 **Consecuencias de usar Live Server:**
-- Archivos `.tsx` se sirven sin compilar → MIME type incorrecto
+- Archivos `.tsx` se sirven sin compilar â†’ MIME type incorrecto
 - Navegador rechaza cargar módulos
 - Error en consola: "Failed to load module script"
 - La app NO funciona
 
-## 🔧 Solución de Problemas
+## ðŸ”§ Solución de Problemas
 
 ### Si el error persiste:
 
@@ -257,25 +257,25 @@ npx vite --version
 npm run dev
 # Debe mostrar:
 #   VITE v5.x.x  ready in xxx ms
-#   ➜  Local:   http://localhost:5173/
-#   ➜  Network: http://192.168.x.x:5173/
+#   âžœ  Local:   http://localhost:5173/
+#   âžœ  Network: http://192.168.x.x:5173/
 
 # 3. Abrir http://localhost:5173 en el navegador
 # NO abrir file:// o Live Server
 ```
 
-## 📊 MIME Types Esperados
+## ðŸ“Š MIME Types Esperados
 
 | Archivo | MIME Type Correcto | MIME Type Error |
 |---------|-------------------|-----------------|
-| `.tsx` / `.ts` | `application/javascript` | `application/octet-stream` ❌ |
-| `.js` (ESM) | `application/javascript` | `text/plain` ❌ |
+| `.tsx` / `.ts` | `application/javascript` | `application/octet-stream` âŒ |
+| `.js` (ESM) | `application/javascript` | `text/plain` âŒ |
 | `.css` | `text/css` | - |
 | `.html` | `text/html` | - |
 
 **Vite Dev Server SIEMPRE envía los MIME types correctos.**
 
-## 🎯 Checklist de Verificación
+## ðŸŽ¯ Checklist de Verificación
 
 - [ ] Dependencias instaladas (`node_modules/` existe)
 - [ ] Vite instalado (`npx vite --version` funciona)
@@ -286,14 +286,14 @@ npm run dev
 - [ ] TypeScript compila sin errores
 - [ ] React se renderiza correctamente
 
-## 📚 Recursos Adicionales
+## ðŸ“š Recursos Adicionales
 
 - [Vite Guide](https://vitejs.dev/guide/)
 - [Vite + React](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
 - [ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [MIME Types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 
-## 🎓 Conclusión
+## ðŸŽ“ Conclusión
 
 El error **"application/octet-stream"** es **100% causado por usar el servidor incorrecto**. 
 
@@ -304,14 +304,16 @@ npm run dev    # Siempre
 ```
 
 Vite Dev Server:
-- ✅ Transpila TypeScript a JavaScript
-- ✅ Sirve con MIME type `application/javascript`
-- ✅ Procesa módulos ES correctamente
-- ✅ Habilita HMR (recarga instantánea)
-- ✅ Resuelve alias de rutas
+- âœ… Transpila TypeScript a JavaScript
+- âœ… Sirve con MIME type `application/javascript`
+- âœ… Procesa módulos ES correctamente
+- âœ… Habilita HMR (recarga instantánea)
+- âœ… Resuelve alias de rutas
 
 **NUNCA** uses Live Server, servidores HTTP simples, o apertura directa de archivos.
 
 ---
 
-**Estado actual del proyecto:** ✅ Configuración corregida y optimizada. Todo listo para `npm run dev`.
+**Estado actual del proyecto:** âœ… Configuración corregida y optimizada. Todo listo para `npm run dev`.
+
+

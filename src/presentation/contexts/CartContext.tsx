@@ -123,7 +123,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       if (existing) {
         const nextQuantity = Math.min(existing.quantity + normalized.quantity, existing.stock)
         if (nextQuantity === existing.quantity) {
-          toast.error('Has alcanzado el límite de stock para este producto.')
+          toast.error('Has alcanzado el límite de cantidad de este producto.')
           return prev
         }
         toast.success('Cantidad actualizada en el carrito.')
@@ -200,3 +200,5 @@ export const useCart = () => {
   if (!context) throw new Error('useCart debe estar dentro de CartProvider')
   return context
 }
+
+

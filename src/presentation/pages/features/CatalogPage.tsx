@@ -28,7 +28,15 @@ const PRODUCTOS_DEMO: Producto[] = [
   { id: '5', nombre: 'Jacket Windbreaker Pro', categoria: 'Chaquetas', precio: 120000, imagen: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=800', marca: 'Under Armour', tallas: ['M','L','XL'], color: 'Verde', disponible: false, destacado: true, nuevo: false, rating: 4.9 },
   { id: '6', nombre: 'Crop Top Athletic', categoria: 'Blusas', precio: 42000, imagen: 'https://images.unsplash.com/photo-1572715252129-61988a807672?q=80&w=800', marca: 'Nike', tallas: ['XS','S','M'], color: 'Rosa', disponible: true, destacado: false, nuevo: true, rating: 4.5 },
   { id: '7', nombre: 'Pantaloneta Training', categoria: 'Pantalonetas', precio: 68000, imagen: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=800', marca: 'Adidas', tallas: ['S','M','L','XL'], color: 'Negro', disponible: true, destacado: false, nuevo: false, rating: 4.8 },
-  { id: '8', nombre: 'Tee Minimalist Black', categoria: 'Camisetas', precio: 35000, imagen: 'https://images.unsplash.com/photo-1581655353687-56206c7970d5?q=80&w=800', marca: 'Puma', tallas: ['S','M','L'], color: 'Negro', disponible: true, destacado: false, nuevo: false, rating: 4.4 }
+  { id: '8', nombre: 'Tee Minimalist Black', categoria: 'Camisetas', precio: 35000, imagen: 'https://images.unsplash.com/photo-1581655353687-56206c7970d5?q=80&w=800', marca: 'Puma', tallas: ['S','M','L'], color: 'Negro', disponible: true, destacado: false, nuevo: false, rating: 4.4 },
+  { id: '9', nombre: 'Sports Bra Elite', categoria: 'Deporte', precio: 75000, imagen: 'https://images.unsplash.com/photo-1576678927586-0c1b2e0a1b0a?q=80&w=800', marca: 'Nike', tallas: ['S','M','L'], color: 'Rojo', disponible: true, destacado: true, nuevo: true, rating: 4.7 },
+  { id: '10', nombre: 'Leggings Power Stretch', categoria: 'Deporte', precio: 95000, imagen: 'https://images.unsplash.com/photo-1594633312532-aea7c9b2b5c5?q=80&w=800', marca: 'Adidas', tallas: ['XS','S','M','L'], color: 'Negro', disponible: true, destacado: false, nuevo: true, rating: 4.8 },
+  { id: '11', nombre: 'Tank Top Summer', categoria: 'Camisetas', precio: 32000, imagen: 'https://images.unsplash.com/photo-1562157873-818bc0725df6?q=80&w=800', marca: 'Reebok', tallas: ['S','M','L','XL'], color: 'Verde', disponible: true, destacado: false, nuevo: false, rating: 4.3 },
+  { id: '12', nombre: 'Sweatshirt Oversized', categoria: 'Sudaderas', precio: 78000, imagen: 'https://images.unsplash.com/photo-1608612991346-a6f9cbd2d5c3?q=80&w=800', marca: 'Puma', tallas: ['S','M','L','XL'], color: 'Azul Marino', disponible: true, destacado: true, nuevo: false, rating: 4.6 },
+  { id: '13', nombre: 'Vestido Fitness', categoria: 'Vestidos', precio: 110000, imagen: 'https://images.unsplash.com/photo-1595665593695-9bea330b7d9e?q=80&w=800', marca: 'Nike', tallas: ['S','M','L'], color: 'Rosa', disponible: true, destacado: false, nuevo: true, rating: 4.9 },
+  { id: '14', nombre: 'Camisa Polo Vintage', categoria: 'Polos', precio: 65000, imagen: 'https://images.unsplash.com/photo-1589310243389-96bedf0eaae1?q=80&w=800', marca: 'Adidas', tallas: ['M','L','XL'], color: 'Amarillo', disponible: true, destacado: false, nuevo: false, rating: 4.5 },
+  { id: '15', nombre: 'Bomber Jacket Street', categoria: 'Chaquetas', precio: 150000, imagen: 'https://images.unsplash.com/photo-1551024601-bec79cee3d95?q=80&w=800', marca: 'Under Armour', tallas: ['S','M','L','XL'], color: 'Cafe', disponible: true, destacado: true, nuevo: true, rating: 4.8 },
+  { id: '16', nombre: 'Shorts Cargo Men', categoria: 'Shorts', precio: 55000, imagen: 'https://images.unsplash.com/photo-1605348954290-c6f9a9b2e0c3?q=80&w=800', marca: 'Nike', tallas: ['S','M','L','XL'], color: 'Olive', disponible: true, destacado: false, nuevo: false, rating: 4.4 }
 ];
 
 const formatPrice = (price: number) => `$${price.toLocaleString('es-CO')}`;
@@ -44,8 +52,10 @@ const CatalogPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState<Producto | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [visibleProducts, setVisibleProducts] = useState(8);
 
   useEffect(() => { const timer = setTimeout(() => setIsLoading(false), 800); return () => clearTimeout(timer); }, []);
+  useEffect(() => { setVisibleProducts(8); }, [searchTerm, categoriaActiva, marcaActiva, filtrosAvanzados]);
 
   const categoriasUnicas = useMemo(() => { const cats = new Set(productos.map(p => p.categoria)); return ['Todas', ...Array.from(cats)]; }, [productos]);
   const marcasUnicas = useMemo(() => { const marcs = new Set(productos.map(p => p.marca).filter(Boolean)); return ['Todas', ...Array.from(marcs) as string[]]; }, [productos]);
@@ -66,6 +76,7 @@ const CatalogPage: React.FC = () => {
   const handleCloseModal = () => { setIsModalOpen(false); setSelectedProduct(null); };
   const handleApplyFilters = (filters: FilterState) => setFiltrosAvanzados(filters);
   const handleResetFilters = () => { setCategoriaActiva('Todas'); setMarcaActiva('Todas'); setFiltrosAvanzados({ tallas: [], marcas: [], categoriasEspeciales: [] }); setSearchTerm(''); };
+  const handleLoadMore = () => setVisibleProducts(prev => prev + 8);
 
   const countFiltrosActivos = () => { let count = 0; if (categoriaActiva !== 'Todas') count++; if (marcaActiva !== 'Todas') count++; count += filtrosAvanzados.tallas.length; count += filtrosAvanzados.marcas.length; count += filtrosAvanzados.categoriasEspeciales.length; return count; };
   const totalFiltrosActivos = countFiltrosActivos();
@@ -167,18 +178,19 @@ const CatalogPage: React.FC = () => {
           <div className="empty-catalog">
             <div className="empty-icon"><Search size={48} /></div>
             <h3>No se encontraron productos</h3>
-            <p>Intenta ajustar tus filtros o términos de búsqueda</p>
+            <p>Intenta ajustar tus filtros o terminos de búsqueda</p>
             <button className="btn-reset-filters" onClick={handleResetFilters}>Ver todos los productos</button>
           </div>
         ) : (
-          <div className="products-grid">
-            {productosFiltrados.map((producto, idx) => (
-              <article
-                key={producto.id}
-                className="premium-product-card"
-                style={{ animationDelay: `${idx * 0.05}s` }}
-                onClick={() => producto.disponible && handleAddToCart(producto)}
-              >
+          <>
+            <div className="products-grid">
+              {productosFiltrados.slice(0, visibleProducts).map((producto, idx) => (
+                <article
+                  key={producto.id}
+                  className="premium-product-card"
+                  style={{ animationDelay: `${idx * 0.05}s` }}
+                  onClick={() => producto.disponible && handleAddToCart(producto)}
+                >
                 <div className="card-image-wrapper">
                   <img src={producto.imagen} alt={producto.nombre} className="card-image" loading="lazy" />
                   <div className="card-badges">
@@ -235,15 +247,23 @@ const CatalogPage: React.FC = () => {
                   </div>
                 </div>
               </article>
-            ))}
-          </div>
+              ))}
+            </div>
+            {visibleProducts < productosFiltrados.length && (
+              <div className="load-more-container">
+                <button className="load-more-btn" onClick={handleLoadMore}>
+                  Ver más productos
+                </button>
+              </div>
+            )}
+          </>
         )}
       </section>
 
       <FilterDrawer isOpen={filtrosAbierto} onClose={() => setFiltrosAbierto(false)} onApplyFilters={handleApplyFilters} />
 
       {selectedProduct && (
-        <ProductDetailModal 
+        <ProductDetailModal
           product={selectedProduct}
           isOpen={isModalOpen}
           onClose={handleCloseModal}
@@ -254,3 +274,5 @@ const CatalogPage: React.FC = () => {
 };
 
 export default CatalogPage;
+
+

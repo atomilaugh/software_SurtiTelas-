@@ -1,4 +1,4 @@
-﻿{
+{
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -53,6 +53,8 @@
       "@infrastructure/repositories/*": ["src/infrastructure/repositories/*"],
       "@shared": ["src/shared"],
       "@shared/*": ["src/shared/*"],
+      "@app": ["src/app"],
+      "@app/*": ["src/app/*"],
       "@assets": ["src/assets"],
       "@assets/*": ["src/assets/*"]
     }

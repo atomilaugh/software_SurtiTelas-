@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useTelas } from '../hooks/useTelas';
 
 const TelaList: React.FC = () => {
@@ -21,3 +21,6 @@ const TelaList: React.FC = () => {
 };
 
 export default TelaList;
+
+
+

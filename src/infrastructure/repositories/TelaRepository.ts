@@ -30,3 +30,6 @@ export class TelaRepository implements ITelaRepository {
     this.telas = this.telas.filter(t => t.id !== id);
   }
 }
+
+
+
