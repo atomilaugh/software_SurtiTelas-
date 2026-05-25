@@ -450,7 +450,7 @@ export function EntregasModule() {
                             <h3 className="font-semibold text-lg">{entrega.cliente}</h3>
                             <Badge className="bg-blue-600">En Camino</Badge>
                           </div>
-                          <p className="text-sm text-gray-600 mb-2">Pedido #{entrega.id} â€¢ Iniciada: {entrega.iniciada}</p>
+                          <p className="text-sm text-gray-600 mb-2">Pedido #{entrega.id} • Iniciada: {entrega.iniciada}</p>
                           <div className="space-y-1 text-sm text-gray-600">
                             <div className="flex items-start gap-2">
                               <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
@@ -515,7 +515,7 @@ export function EntregasModule() {
                             <Badge className="bg-green-600">Entregado</Badge>
                           </div>
                           <p className="text-sm text-gray-600 mb-2">
-                            Pedido #{entrega.id} â€¢ Entregado: {entrega.horaEntrega}
+                            Pedido #{entrega.id} • Entregado: {entrega.horaEntrega}
                           </p>
                           <div className="space-y-1 text-sm text-gray-600">
                             <div className="flex items-start gap-2">

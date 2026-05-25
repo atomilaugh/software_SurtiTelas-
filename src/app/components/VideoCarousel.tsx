@@ -1,5 +1,5 @@
 ﻿// -------------------------------------------------------
-// VideoCarousel Mejorado â€“ Compatible con:
+// VideoCarousel Mejorado - Compatible con:
 // - youtube:VIDEO_ID
 // - URLs completas de Shorts y YouTube normales
 // - Videos MP4 locales

@@ -312,7 +312,7 @@ export function ClientManagement({ employee }: ClientManagementProps) {
 
   const handleSendRecommendation = (client: ActiveClient, productIds: string[]) => {
     const recommendedProducts = allProducts.filter((p) => productIds.includes(p.id));
-    const productList = recommendedProducts.map((p) => `â€¢ ${p.name} - $${p.price.toLocaleString()}`).join('\\n');
+    const productList = recommendedProducts.map((p) => `• ${p.name} - $${p.price.toLocaleString()}`).join('\\n');
 
     const whatsappNumber = client.phone.replace(/[^0-9]/g, '');
     const message = `Hola ${client.name}, basándome en tus intereses, te recomiendo:\\n\\n${productList}\\n\\nÂ¿Te gustaría más información?`;
@@ -682,7 +682,7 @@ export function ClientManagement({ employee }: ClientManagementProps) {
                           <div className="flex-1">
                             <p className="text-sm">{item.product.name}</p>
                             <p className="text-xs text-gray-600">
-                              {item.size} â€¢ {item.color} â€¢ x{item.quantity}
+                              {item.size} • {item.color} • x{item.quantity}
                             </p>
                           </div>
                           <p className="text-sm">${(item.product.price * item.quantity).toLocaleString()}</p>

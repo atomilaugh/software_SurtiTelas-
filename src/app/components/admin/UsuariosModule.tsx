@@ -251,11 +251,11 @@ export function UsuariosModule({ activeTab }: UsuariosModuleProps) {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="password">Contraseña</Label>
-                      <Input id="password" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" />
+                      <Input id="password" type="password" placeholder="••••••••" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="confirm-password">Confirmar contraseña</Label>
-                      <Input id="confirm-password" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" />
+                      <Input id="confirm-password" type="password" placeholder="••••••••" />
                     </div>
                     <div className="col-span-2 flex items-center space-x-2">
                       <Switch id="activo" />

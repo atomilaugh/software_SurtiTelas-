@@ -993,7 +993,7 @@ export function ClientDashboard({
                       <CreditCard className="h-8 w-8" />
                       <p className="text-sm opacity-80">{method.brand}</p>
                     </div>
-                    <p className="text-2xl mb-4">â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ {method.last4}</p>
+                    <p className="text-2xl mb-4">•••• •••• •••• {method.last4}</p>
                     <p className="text-sm opacity-80 mb-6">Expira: {method.expiry}</p>
 
                     <div className="flex gap-2">

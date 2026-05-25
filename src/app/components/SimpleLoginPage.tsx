@@ -116,7 +116,7 @@ export function SimpleLoginPage({ onLogin, onBackToLanding }: SimpleLoginPagePro
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                  placeholder="••••••••"
                   className="pl-10"
                   required
                 />

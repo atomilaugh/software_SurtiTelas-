@@ -56,10 +56,10 @@ export function AdvisorAssistant({
     
     cartItems.forEach((item, index) => {
       message += `${index + 1}. ${item.product.name}\n`;
-      message += `   â€¢ Talla: ${item.size}\n`;
-      message += `   â€¢ Color: ${item.color}\n`;
-      message += `   â€¢ Cantidad: ${item.quantity}\n`;
-      message += `   â€¢ Precio: $${(item.product.price * item.quantity).toLocaleString()}\n\n`;
+      message += `   • Talla: ${item.size}\n`;
+      message += `   • Color: ${item.color}\n`;
+      message += `   • Cantidad: ${item.quantity}\n`;
+      message += `   • Precio: $${(item.product.price * item.quantity).toLocaleString()}\n\n`;
     });
 
     const subtotal = cartItems.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
@@ -211,7 +211,7 @@ export function AdvisorAssistant({
                         <div className="flex-1 min-w-0">
                           <p className="truncate text-xs">{item.product.name}</p>
                           <p className="text-xs text-gray-500">
-                            {item.size} â€¢ {item.color} â€¢ <span className="text-blue-600">x{item.quantity}</span>
+                            {item.size} • {item.color} • <span className="text-blue-600">x{item.quantity}</span>
                           </p>
                         </div>
                       </div>

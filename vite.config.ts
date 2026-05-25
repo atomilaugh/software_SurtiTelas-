@@ -1,4 +1,4 @@
-﻿import { defineConfig } from "vite"
+import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import path from "path"
 
@@ -57,12 +57,12 @@ export default defineConfig({
     }
   },
   // Asegura que los tipos de módulo se resuelvan correctamente
-  optimizeDeps: {
-    include: ["react", "react-dom", "react-router-dom", "lucide-react", "react-is", "recharts"]
-  },
-  ssr: {
-    external: ["recharts"]
-  }
+   optimizeDeps: {
+     include: ["react", "react-dom", "react-router-dom", "react-is", "recharts"]
+   },
+   ssr: {
+     external: ["recharts", "lucide-react"]
+   }
 })
 
 

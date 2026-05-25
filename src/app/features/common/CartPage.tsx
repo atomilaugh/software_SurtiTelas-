@@ -235,7 +235,7 @@ export function CartPage({
                         <span className="text-gray-600">
                           Talla: <span className="text-black">{item.size}</span>
                         </span>
-                        <span className="text-gray-400">â€¢</span>
+                        <span className="text-gray-400">•</span>
                         <span className="text-gray-600">
                           Color: <span className="text-black">{item.color}</span>
                         </span>

@@ -231,7 +231,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
               </div>
             </div>
 
-            {/* Installments block â€” conditional */}
+            {/* Installments block  —  conditional */}
             {paymentType === 'installments' && (
               <div className="ch-installments-block">
                 <span className="ch-install-label">Selecciona número de cuotas</span>

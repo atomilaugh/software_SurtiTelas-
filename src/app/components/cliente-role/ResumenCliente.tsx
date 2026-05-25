@@ -184,7 +184,7 @@ export function ResumenCliente({ userName, onNavigate }: ResumenClienteProps) {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-gray-900">{pedido.id}</p>
-                  <p className="text-sm text-gray-600">{pedido.fecha} â€¢ {pedido.productos} productos</p>
+                  <p className="text-sm text-gray-600">{pedido.fecha} • {pedido.productos} productos</p>
                   <p className="text-xs text-gray-500 mt-1 truncate">{pedido.descripcion}</p>
                 </div>
               </div>
